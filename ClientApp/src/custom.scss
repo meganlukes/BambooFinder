@@ -11,6 +11,7 @@ body {
   min-height: 100%;
   background-image: url('https://wallpapercave.com/wp/IFZvY21.jpg');
   background-size: cover;
+  background-position: center;
   text-align: center;
   padding-left: 0rem;
   margin-left: 0rem;
@@ -20,6 +21,7 @@ button {
   padding-left: 0rem;
   min-height: 15vh;
   width: 80vw;
+  max-width: 1000px;
   margin-top: 5vh;
   font-size: 1.5rem;
   background-color: rgba(122, 153, 72, 0.8);

@@ -9,4 +9,28 @@ html {
 body {
   margin: 0;
   min-height: 100%;
+  background-image: url('https://wallpapercave.com/wp/IFZvY21.jpg');
+  background-size: cover;
+  text-align: center;
+  padding-left: 0rem;
+  margin-left: 0rem;
+}
+button {
+  margin-left: 0rem;
+  padding-left: 0rem;
+  min-height: 15vh;
+  width: 80vw;
+  margin-top: 5vh;
+  font-size: 1.5rem;
+  background-color: rgba(122, 153, 72, 0.8);
+}
+header {
+  background-color: rgb(255, 254, 254, 0.5);
+  padding-left: 0rem;
+  margin-left: 0rem;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+}
+h1 {
+  font-size: 2rem;
 }

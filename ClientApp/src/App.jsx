@@ -4,7 +4,7 @@ import './custom.scss'
 export function App() {
   return (
     <main>
-      <div className="mainback">
+      <div>
         <header>
           <h1>BambooFinder.com</h1>
           <p></p>

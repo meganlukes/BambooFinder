@@ -3,9 +3,10 @@ import { Link, Route, Switch, useParams } from 'react-router-dom'
 import axios from 'axios'
 import './custom.scss'
 import { FrontPage } from './pages/FrontPage'
-import { ListOfNurseries } from './ListOfNurseries'
-import { NurseryOwnersMain } from './NurseryOwnersMain'
+import { ListOfNurseries } from './pages/ListOfNurseries'
+import { NurseryOwnersMain } from './pages/NurseryOwnersMain'
 import { SetZipcode } from './components/SetZipcode'
+import { SetZone } from './components/SetZone'
 
 function BambooPlantsMain() {
   return (
@@ -18,6 +19,7 @@ function BambooPlantsMain() {
         </p>
       </header>
       <SetZipcode />
+      <SetZone />
     </div>
   )
 }

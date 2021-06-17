@@ -44,10 +44,10 @@ export function SetSize() {
         Large (25'-40')
       </button>
       <button classname="small" onClick={ChangeToHuge}>
-        Small (40'+)
+        Massive (40'+)
       </button>
       <button classname="small" onClick={ChangeToDefault}>
-        No Preference
+        Reset
       </button>
     </div>
   )

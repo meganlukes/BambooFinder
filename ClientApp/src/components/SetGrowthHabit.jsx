@@ -23,7 +23,7 @@ export function SetGrowthHabit() {
         Clumping
       </button>
       <button classname="small" onClick={ChangeToDefault}>
-        No Preference
+        Reset
       </button>
     </div>
   )

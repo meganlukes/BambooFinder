@@ -9,6 +9,7 @@ import { SetZipcode } from './components/SetZipcode'
 import { SetZone } from './components/SetZone'
 import { SetGrowthHabit } from './components/SetGrowthHabit'
 import { SetSize } from './components/SetSize'
+import { SetSun } from './components/SetSun'
 
 function BambooPlantsMain() {
   return (
@@ -20,9 +21,13 @@ function BambooPlantsMain() {
           you!
         </p>
       </header>
-
+      <label>USDA Plant Hardiness Zones</label>
       <SetZone />
+      <label>Clumping or Running</label>
       <SetGrowthHabit />
+      <label>Sun Requirements</label>
+      <SetSun />
+      <label>Full Height</label>
       <SetSize />
     </div>
   )

@@ -12,6 +12,7 @@ body {
   background-image: url('https://wallpapercave.com/wp/IFZvY21.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   text-align: center;
   padding-left: 0rem;
   margin-left: 0rem;
@@ -29,7 +30,8 @@ body {
 }
 header {
   background-color: rgb(255, 254, 254, 0.5);
-  padding-left: 0rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-left: 0rem;
   padding-top: 0.5vh;
   padding-bottom: 0.5vh;
@@ -75,5 +77,24 @@ label {
   font-weight: bold;
 }
 .bambooListItem {
-  background-color: white;
+  background-color: rgba(122, 153, 72, 0.9);
+  width: fit-content;
+  border: 2px solid black;
+  text-align: left;
+  padding: 10px;
+  margin: 15px;
+}
+.bambooList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+img {
+  justify-content: center;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

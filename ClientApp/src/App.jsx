@@ -11,7 +11,7 @@ import { SetGrowthHabit } from './components/SetGrowthHabit'
 import { SetSize } from './components/SetSize'
 import { SetSun } from './components/SetSun'
 import { SetHeight } from './components/SetHeight'
-import bluechungii from '../Images/bluechungii.jpg'
+import bluechungii from './Images/bluechungii.jpg'
 function BambooPlantsMain() {
   return (
     <div>
@@ -30,19 +30,56 @@ function BambooPlantsMain() {
       <SetSun />
       <label>Full Height</label>
       <SetSize />
-      <ol className="bambooListItem">
-        <img src="Images/bluechungii.jpg" alt="Woman standing next to bamboo" />
-        <li>
-          <i>Bambusa chungii</i> 'Barbelatta'
-        </li>
-        <ul>
-          <li>Zone</li>
+      <ol className="bambooList">
+        <ol className="bambooListItem">
+          <img
+            src={bluechungii}
+            alt="Woman standing next to bamboo"
+            width="200"
+          />
+          <li>
+            <i>Bambusa chungii</i>
+          </li>
+          <li>Tropical Blue Bamboo</li>
+          <li>Zone: 9a-11b</li>
           <li>Full Sun to Part Shade</li>
-        </ul>
-        <ul>
-          <li>20-25'</li>
-          <li>Clumping</li>
-        </ul>
+          <ul>
+            <li>Height: 30'</li>
+            <li>Clumping</li>
+          </ul>
+        </ol>
+        <ol className="bambooListItem">
+          <img
+            src={bluechungii}
+            alt="Woman standing next to bamboo"
+            width="200"
+          />
+          <li>
+            <i>Bambusa chungii</i>
+          </li>
+          <li>Zone: 9a-11b</li>
+          <li>Full Sun to Part Shade</li>
+          <ul>
+            <li>Height: 30'</li>
+            <li>Clumping</li>
+          </ul>
+        </ol>
+        <ol className="bambooListItem">
+          <img
+            src={bluechungii}
+            alt="Woman standing next to bamboo"
+            width="200"
+          />
+          <li>
+            <i>Bambusa chungii</i>
+          </li>
+          <li>Zone: 9a-11b</li>
+          <li>Full Sun to Part Shade</li>
+          <ul>
+            <li>Height: 30'</li>
+            <li>Clumping</li>
+          </ul>
+        </ol>
       </ol>
     </div>
   )

@@ -11,7 +11,11 @@ export function SetZipcode() {
   }
   return (
     <form>
-      <input type="text" onChange={updateTempZipcode} placeholder="Zip Code" />
+      <input
+        type="text"
+        onChange={updateTempZipcode}
+        placeholder="My Zip Code"
+      />
       <button className="small" onClick={updateNewZipcode}>
         Set
       </button>

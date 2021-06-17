@@ -7,7 +7,7 @@ export function SetZone() {
     setTempZone(event.target.value)
   }
   function updateNewZone(event) {
-    switch (tempZone) {
+    switch (tempZone.toLowerCase()) {
       case '5a':
         return (zone = 10)
       case '5b':
@@ -38,7 +38,11 @@ export function SetZone() {
   }
   return (
     <form>
-      <input type="text" onChange={updateTempZone} placeholder="9A" />
+      <input
+        type="text"
+        onChange={updateTempZone}
+        placeholder="Hardiness Zone"
+      />
       <button className="small" onClick={updateNewZone}>
         Set
       </button>

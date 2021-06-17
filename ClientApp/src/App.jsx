@@ -7,6 +7,8 @@ import { ListOfNurseries } from './pages/ListOfNurseries'
 import { NurseryOwnersMain } from './pages/NurseryOwnersMain'
 import { SetZipcode } from './components/SetZipcode'
 import { SetZone } from './components/SetZone'
+import { SetGrowthHabit } from './components/SetGrowthHabit'
+import { SetSize } from './components/SetSize'
 
 function BambooPlantsMain() {
   return (
@@ -18,8 +20,10 @@ function BambooPlantsMain() {
           you!
         </p>
       </header>
-      <SetZipcode />
+
       <SetZone />
+      <SetGrowthHabit />
+      <SetSize />
     </div>
   )
 }

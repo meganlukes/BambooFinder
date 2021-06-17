@@ -4,6 +4,7 @@ import axios from 'axios'
 import './custom.scss'
 import { FrontPage } from './pages/FrontPage'
 import { ListOfNurseries } from './ListOfNurseries'
+import { NurseryOwnersMain } from './NurseryOwnersMain'
 
 export function App() {
   return (
@@ -16,7 +17,9 @@ export function App() {
           <ListOfNurseries />
         </Route>
         <Route path="/bamboo-list"></Route>
-        <Route path="/nursery-owners"></Route>
+        <Route path="/nursery-owners">
+          <NurseryOwnersMain />
+        </Route>
         <Route path="/nursery-owners/new-nursery"></Route>
         <Route path="/nursery-owners/edit-nursery"></Route>
         <Route path="/nursery-owners/add-bamboo"></Route>

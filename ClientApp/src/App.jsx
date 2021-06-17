@@ -5,6 +5,22 @@ import './custom.scss'
 import { FrontPage } from './pages/FrontPage'
 import { ListOfNurseries } from './ListOfNurseries'
 import { NurseryOwnersMain } from './NurseryOwnersMain'
+import { SetZipcode } from './components/SetZipcode'
+
+function BambooPlantsMain() {
+  return (
+    <div>
+      <header>
+        <h2>Bamboo Plants</h2>
+        <p>
+          Browse our database of bamboo plants and find the one that's right for
+          you!
+        </p>
+      </header>
+      <SetZipcode />
+    </div>
+  )
+}
 
 export function App() {
   return (
@@ -16,7 +32,9 @@ export function App() {
         <Route path="/nursery-list">
           <ListOfNurseries />
         </Route>
-        <Route path="/bamboo-list"></Route>
+        <Route path="/bamboo-list">
+          <BambooPlantsMain />
+        </Route>
         <Route path="/nursery-owners">
           <NurseryOwnersMain />
         </Route>

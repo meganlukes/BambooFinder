@@ -1,5 +1,5 @@
 import React from 'react'
-import { SetZipcode } from './SetZipcode'
+import { SetZipcode } from './components/SetZipcode'
 
 export function ListOfNurseries() {
   return (

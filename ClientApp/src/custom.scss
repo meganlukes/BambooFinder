@@ -16,7 +16,8 @@ body {
   padding-left: 0rem;
   margin-left: 0rem;
 }
-button {
+
+.big {
   margin-left: 0rem;
   padding-left: 0rem;
   min-height: 10vh;
@@ -33,8 +34,48 @@ header {
   padding-top: 0.5vh;
   padding-bottom: 0.5vh;
   font-size: 32px;
-  margin-bottom: 30vh;
+  margin-bottom: 3vh;
 }
 h1 {
   font-size: 38px;
+}
+h2 {
+  font-size: 28px;
+}
+form {
+  margin-bottom: 15px;
+}
+.zipInput {
+  align-items: flex-end;
+}
+.item1 {
+  grid-area: bizName;
+}
+.item2 {
+  grid-area: address;
+}
+.item3 {
+  grid-area: ship;
+}
+.item4 {
+  grid-area: distance;
+  width: 4rem;
+}
+
+.grid-container-n {
+  display: grid;
+  grid-template-areas: 'bizName address address ship distance';
+  background-color: yellowgreen;
+  grid-gap: 3px;
+}
+.grid-container-n > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 10px;
+  font-size: 16px;
+}
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }

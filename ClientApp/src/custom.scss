@@ -48,34 +48,13 @@ form {
 .zipInput {
   align-items: flex-end;
 }
-.item1 {
-  grid-area: bizName;
-}
-.item2 {
-  grid-area: address;
-}
-.item3 {
-  grid-area: ship;
-}
-.item4 {
-  grid-area: distance;
-  width: 4rem;
-}
 
-.grid-container-n {
-  display: grid;
-  grid-template-areas: 'bizName address address ship distance';
-  background-color: yellowgreen;
-  grid-gap: 3px;
+table,
+th,
+td {
+  border: 1px solid black;
+  background-color: rgb(192, 196, 160, 0.6);
 }
-.grid-container-n > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 10px;
-  font-size: 16px;
-}
-span {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: normal;
+table {
+  margin: 5px;
 }

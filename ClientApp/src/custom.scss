@@ -48,7 +48,13 @@ form {
 .zipInput {
   align-items: flex-end;
 }
-
+ol,
+ul,
+li {
+  list-style: none;
+  margin-left: 0px;
+  padding-left: 0px;
+}
 table,
 th,
 td {
@@ -67,4 +73,7 @@ button {
 label {
   color: rgb(78, 230, 111);
   font-weight: bold;
+}
+.bambooListItem {
+  background-color: white;
 }

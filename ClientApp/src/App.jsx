@@ -10,7 +10,8 @@ import { SetZone } from './components/SetZone'
 import { SetGrowthHabit } from './components/SetGrowthHabit'
 import { SetSize } from './components/SetSize'
 import { SetSun } from './components/SetSun'
-
+import { SetHeight } from './components/SetHeight'
+import bluechungii from '../Images/bluechungii.jpg'
 function BambooPlantsMain() {
   return (
     <div>
@@ -29,6 +30,20 @@ function BambooPlantsMain() {
       <SetSun />
       <label>Full Height</label>
       <SetSize />
+      <ol className="bambooListItem">
+        <img src="Images/bluechungii.jpg" alt="Woman standing next to bamboo" />
+        <li>
+          <i>Bambusa chungii</i> 'Barbelatta'
+        </li>
+        <ul>
+          <li>Zone</li>
+          <li>Full Sun to Part Shade</li>
+        </ul>
+        <ul>
+          <li>20-25'</li>
+          <li>Clumping</li>
+        </ul>
+      </ol>
     </div>
   )
 }

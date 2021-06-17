@@ -44,7 +44,7 @@ export function SetSize() {
         Large (25'-40')
       </button>
       <button classname="small" onClick={ChangeToHuge}>
-        Massive (40'+)
+        Massive/Timber (40'+)
       </button>
       <button classname="small" onClick={ChangeToDefault}>
         Reset

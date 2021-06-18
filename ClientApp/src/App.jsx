@@ -12,6 +12,9 @@ import { SetSize } from './components/SetSize'
 import { SetSun } from './components/SetSun'
 import { SetHeight } from './components/SetHeight'
 import bluechungii from './Images/bluechungii.jpg'
+
+//http://www.bamboogarden.com/Smaller%20Running%20Bamboos.htm
+
 function BambooPlantsMain() {
   return (
     <div>

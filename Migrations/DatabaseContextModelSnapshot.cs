@@ -25,23 +25,32 @@ namespace BambooFinder.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<bool>("GrowthHabit")
+                    b.Property<bool>("Clumping")
                         .HasColumnType("boolean");
-
-                    b.Property<int>("Height")
-                        .HasColumnType("integer");
 
                     b.Property<string>("Info")
                         .HasColumnType("text");
 
-                    b.Property<int>("Light")
+                    b.Property<int>("MaxHeight")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("MaxLight")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("MaxZone")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("MinHeight")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("MinLight")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("MinZone")
                         .HasColumnType("integer");
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
-
-                    b.Property<int>("Zone")
-                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 

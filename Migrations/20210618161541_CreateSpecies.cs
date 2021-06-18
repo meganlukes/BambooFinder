@@ -15,10 +15,13 @@ namespace BambooFinder.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "text", nullable: true),
                     Info = table.Column<string>(type: "text", nullable: true),
-                    Height = table.Column<int>(type: "integer", nullable: false),
-                    GrowthHabit = table.Column<bool>(type: "boolean", nullable: false),
-                    Zone = table.Column<int>(type: "integer", nullable: false),
-                    Light = table.Column<int>(type: "integer", nullable: false)
+                    MinHeight = table.Column<int>(type: "integer", nullable: false),
+                    MaxHeight = table.Column<int>(type: "integer", nullable: false),
+                    Clumping = table.Column<bool>(type: "boolean", nullable: false),
+                    MinZone = table.Column<int>(type: "integer", nullable: false),
+                    MaxZone = table.Column<int>(type: "integer", nullable: false),
+                    MinLight = table.Column<int>(type: "integer", nullable: false),
+                    MaxLight = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {

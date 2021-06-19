@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace BambooFinder.Models
 {
     public class Species
@@ -15,6 +17,7 @@ namespace BambooFinder.Models
         public int MaxZone { get; set; }
         public int MinLight { get; set; }
         public int MaxLight { get; set; }
+        public List<Nurseries> Sellers { get; set; }
     }
 }
 // psql --file=Models/exampledata.sql BambooFinderDatabase

@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Text.RegularExpressions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using BambooFinder.Models;
 
 namespace BambooFinder.Models
 {
@@ -46,5 +47,7 @@ namespace BambooFinder.Models
 
             return $"server={connectionParts[2]};SSL Mode=Require;Trust Server Certificate=true;database={connectionParts[4]};User Id={connectionParts[0]};password={connectionParts[1]};port={connectionParts[3]}";
         }
+
+        public DbSet<BambooFinder.Models.Nurseries> Nurseries { get; set; }
     }
 }

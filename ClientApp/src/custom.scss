@@ -67,13 +67,18 @@ table {
   margin: 5px;
 }
 p {
-  font-size: 1.3rem;
+  font-size: 1rem;
+  background-color: rgb(255, 254, 254, 0.5);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: 7rem;
+  margin-right: 7rem;
 }
 button {
   margin: 2px;
 }
 label {
-  color: rgb(78, 230, 111);
+  color: rgb(57, 63, 95);
   font-weight: bold;
 }
 .bambooListItem {

@@ -12,6 +12,7 @@ import { SetSize } from './components/SetSize'
 import { SetSun } from './components/SetSun'
 import { SetHeight } from './components/SetHeight'
 import bluechungii from './Images/bluechungii.jpg'
+import bluechungii2 from './Images/bluechungii4.jpg'
 import runningclumping from './Images/runningclumping.jpg'
 import usdazones from './Images/usdazones.jpg'
 
@@ -22,12 +23,11 @@ function BambooPlantsMain() {
     <div>
       <header>
         <h2>Bamboo Plants</h2>
-        <p>
-          Browse our database of bamboo plants and find the one that's right for
-          you!
-        </p>
       </header>
-
+      <p>
+        Browse our database of bamboo plants and find the one that's right for
+        you!
+      </p>
       <label>USDA Plant Hardiness Zones</label>
       <div>
         <img
@@ -36,10 +36,10 @@ function BambooPlantsMain() {
           width="300"
         />
         <p>
-          A bamboo's tolerance for cold can be described by it's USDA hardiness
-          zone. Bamboo can be grown outside it's hardiness zone if it is kept in
-          a container and moved indoors in the winter, or if it is kept indoors
-          as a houseplant. It is important to note that a bamboo's zone does NOT
+          USDA hardiness zones are used to describe a plant's cold-tolerance.
+          Bamboo can be grown outside its hardiness zone if it is kept in a
+          container and moved indoors in the winter, or if it is kept indoors as
+          a houseplant. It is important to note that a bamboo's zone does NOT
           necessarily correlate with it's preferred climate. A zone 8 bamboo
           might not be able to tolerate the heat and humidity of the southeast,
           or it might be stunted by the lower temperatures of the pacific
@@ -71,12 +71,12 @@ function BambooPlantsMain() {
       <ol className="bambooList">
         <ol className="bambooListItem">
           <img
-            src={bluechungii}
+            src={bluechungii2}
             alt="Woman standing next to bamboo"
             width="200"
           />
           <li>
-            <i>Bambusa chungii</i>
+            <i>Bambusa chungii 1</i>
           </li>
           <li>Tropical Blue Bamboo</li>
           <li>Zone: 9a-11b</li>
@@ -93,7 +93,7 @@ function BambooPlantsMain() {
             width="200"
           />
           <li>
-            <i>Bambusa chungii</i>
+            <i>Bambusa chungii 2</i>
           </li>
           <li>Zone: 9a-11b</li>
           <li>Full Sun to Part Shade</li>
@@ -109,7 +109,39 @@ function BambooPlantsMain() {
             width="200"
           />
           <li>
-            <i>Bambusa chungii</i>
+            <i>Bambusa chungii 3</i>
+          </li>
+          <li>Zone: 9a-11b</li>
+          <li>Full Sun to Part Shade</li>
+          <ul>
+            <li>Height: 30'</li>
+            <li>Clumping</li>
+          </ul>
+        </ol>
+        <ol className="bambooListItem">
+          <img
+            src={bluechungii}
+            alt="Woman standing next to bamboo"
+            width="200"
+          />
+          <li>
+            <i>Bambusa chungii 4</i>
+          </li>
+          <li>Zone: 9a-11b</li>
+          <li>Full Sun to Part Shade</li>
+          <ul>
+            <li>Height: 30'</li>
+            <li>Clumping</li>
+          </ul>
+        </ol>
+        <ol className="bambooListItem">
+          <img
+            src={bluechungii}
+            alt="Woman standing next to bamboo"
+            width="200"
+          />
+          <li>
+            <i>Bambusa chungii 5</i>
           </li>
           <li>Zone: 9a-11b</li>
           <li>Full Sun to Part Shade</li>

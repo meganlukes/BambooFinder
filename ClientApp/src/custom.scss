@@ -1,5 +1,5 @@
 :root {
-  font: 16px / 1 sans-serif;
+  font: 18px / 1 sans-serif;
 }
 
 html {
@@ -68,11 +68,11 @@ table {
 }
 p {
   font-size: 1rem;
-  background-color: rgb(255, 254, 254, 0.5);
+  background-color: rgb(255, 254, 254, 0.8);
   padding-left: 1rem;
   padding-right: 1rem;
-  margin-left: 7rem;
-  margin-right: 7rem;
+  max-width: 900px;
+  align-items: center;
 }
 button {
   margin: 2px;
@@ -89,17 +89,38 @@ label {
   padding: 10px;
   margin: 15px;
 }
+.bambooListItem img {
+  width: 100%;
+  max-width: 300px;
+}
 .bambooList {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 10px;
 }
 img {
   justify-content: center;
 }
+
 ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+@media all and (min-width: 765px) {
+  .bambooList {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+  }
+}
+@media all and (min-width: 1013px) {
+  .bambooList {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: center;
+    max-width: 1125px;
+  }
 }

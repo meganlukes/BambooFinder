@@ -5,7 +5,6 @@ import './custom.scss'
 import { FrontPage } from './pages/FrontPage'
 import { ListOfNurseries } from './pages/ListOfNurseries'
 import { NurseryOwnersMain } from './pages/NurseryOwnersMain'
-import { SetZipcode } from './components/SetZipcode'
 import { SetHeight } from './components/SetHeight'
 import { BambooPlantsMain } from './pages/BambooPlantsMain'
 

@@ -31,9 +31,10 @@ export function BambooPlantsMain() {
         <h1>BambooFinder.com</h1>
         <h2>Bamboo Plants</h2>
       </header>
-      <p>
-        Use our database of bamboo plants to find the one that's right for you.
-      </p>
+      <p>Find the bamboo that's right for you.</p>
+      <form>
+        <input type="text" placeholder="Search..." />
+      </form>
       <label>USDA Plant Hardiness Zones</label>
       <div>
         <img

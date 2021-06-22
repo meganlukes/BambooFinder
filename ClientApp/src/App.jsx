@@ -177,6 +177,12 @@ export function App() {
         <Route></Route>
         <Route></Route>
       </Switch>
+      <ol class="bottom banner">
+        <li class="horizontalspace">BambooFinder.com</li>
+        <li class="horizontalspace">
+          Contact us at <span>info@bamboofinder.com</span>
+        </li>
+      </ol>
     </main>
   )
 }

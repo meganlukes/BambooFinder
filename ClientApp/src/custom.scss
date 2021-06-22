@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 :root {
   font: 18px / 1 sans-serif;
 }
@@ -30,16 +32,17 @@ body {
 }
 header {
   background-color: rgb(255, 254, 254, 0.5);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  margin-left: 0rem;
-  padding-top: 0.5vh;
-  padding-bottom: 0.5vh;
-  font-size: 32px;
-  margin-bottom: 3vh;
+  padding-left: 0rem;
+  padding-right: 0rem;
+  margin: 0rem;
+
+  font-family: 'Indie Flower', cursive;
 }
 h1 {
-  font-size: 38px;
+  font-size: 45px;
+  padding-top: 2vh;
+  padding-bottom: 1vh;
+  margin: 0px;
 }
 h2 {
   font-size: 28px;
@@ -72,7 +75,8 @@ p {
   padding-left: 1rem;
   padding-right: 1rem;
   max-width: 900px;
-  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 button {
   margin: 2px;
@@ -98,7 +102,8 @@ label {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 img {
   justify-content: center;
@@ -108,6 +113,13 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+@media all and (min-width: 500px) {
+  h1 {
+    font-size: 60px;
+    padding-top: 1vh;
+    padding-bottom: 0.5vh;
+  }
 }
 @media all and (min-width: 765px) {
   .bambooList {
@@ -123,4 +135,28 @@ ul {
     justify-content: center;
     max-width: 1125px;
   }
+}
+.bottom {
+  background-color: rgba(76, 59, 26);
+  color: white;
+  padding: 0.5%;
+  display: flex;
+  align-items: flex-end;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
+.banner {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.horizontalspace {
+  margin-right: 2%;
+}
+span {
+  text-decoration: underline;
 }

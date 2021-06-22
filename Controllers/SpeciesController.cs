@@ -31,11 +31,19 @@ namespace BambooFinder.Controllers
         // Returns a list of all your Species
         //
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Species>>> GetSpecies()
+        public async Task<ActionResult<IEnumerable<Species>>> GetSpecies(string filter)
         {
             // Uses the database context in `_context` to request all of the Species, sort
             // them by row id and return them as a JSON array.
-            return await _context.Species.OrderBy(row => row.Id).ToListAsync();
+            if (filter == null)
+            {
+                return await _context.Species.OrderBy(row => row.Id).ToListAsync();
+            }
+            else
+            {
+                return await _context.Species.Where(species => species.Name.ToLower().Contains(filter.ToLower())).ToListAsync();
+            }
+
         }
 
         // GET: api/Species/5

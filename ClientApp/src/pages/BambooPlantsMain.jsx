@@ -16,7 +16,7 @@ export function BambooPlantsMain() {
 
   useEffect(() => {
     async function loadPlants() {
-      const response = await fetch('http://localhost:5000/api/Species')
+      const response = await fetch('/api/Species')
       if (response.code === 200) {
         const json = await response.json()
         setPlants(json)
@@ -96,11 +96,7 @@ export function BambooPlantsMain() {
           </ol>
         ))}
         <ol className="bambooListItem">
-          <img
-            src={bluechungii2}
-            alt="Woman standing next to bamboo"
-            width="200"
-          />
+          <img src={bluechungii2} alt="Bamboo" width="200" />
           <li>
             <i>Blue Chungii</i>
           </li>

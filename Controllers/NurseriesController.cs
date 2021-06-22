@@ -31,11 +31,20 @@ namespace BambooFinder.Controllers
         // Returns a list of all your Nurseries
         //
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Nursery>>> GetNurseries()
+        public async Task<ActionResult<IEnumerable<Nursery>>> GetNurseries(string filter)
         {
             // Uses the database context in `_context` to request all of the Nurseries, sort
             // them by row id and return them as a JSON array.
-            return await _context.Nurseries.OrderBy(row => row.Id).ToListAsync();
+            // return await _context.Nurseries.OrderBy(row => row.Id).ToListAsync();
+
+            if (filter == null)
+            {
+                return await _context.Nurseries.OrderBy(row => row.State).ToListAsync();
+            }
+            else
+            {
+                return await _context.Nurseries.Where(nursery => nursery.Name.ToLower().Contains(filter.ToLower())).ToListAsync();
+            }
         }
 
         // GET: api/Nurseries/5

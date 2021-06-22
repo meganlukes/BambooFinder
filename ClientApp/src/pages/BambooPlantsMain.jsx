@@ -89,7 +89,7 @@ export function BambooPlantsMain() {
       <SetSize />
       <ol className="bambooList">
         {plants.map((plant) => (
-          <ol className="bambooListItem">
+          <ol className="bambooListItem" key={plant.id}>
             <img
               src={bluechungii}
               alt="Woman standing next to bamboo"

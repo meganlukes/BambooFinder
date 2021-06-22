@@ -40,13 +40,9 @@ export function ListOfNurseries() {
           <th>Location</th>
           <th>Ship Out of State?</th>
         </tr>
-        <tr>
-          <td>Wilson Bros Gardens</td>
-          <td>McDonough, GA</td>
-          <td>Lower 48 States</td>
-        </tr>
+
         {nurseries.map((nursery) => (
-          <tr>
+          <tr key={nursery.id}>
             <td>{nursery.name}</td>
             <td>
               {nursery.city}, {nursery.state}

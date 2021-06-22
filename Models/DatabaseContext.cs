@@ -12,10 +12,15 @@ namespace BambooFinder.Models
         private static string DEVELOPMENT_DATABASE_NAME = "BambooFinderDatabase";
 
         // Change this to true if you want to have logging of SQL statements in development
-        private static bool LOG_SQL_STATEMENTS_IN_DEVELOPMENT = false;
+        private static bool LOG_SQL_STATEMENTS_IN_DEVELOPMENT = true;
 
         // Add database tables here
         public DbSet<Species> Species
+        {
+            get; set;
+        }
+
+        public DbSet<Nursery> Nurseries
         {
             get; set;
         }
@@ -48,6 +53,6 @@ namespace BambooFinder.Models
             return $"server={connectionParts[2]};SSL Mode=Require;Trust Server Certificate=true;database={connectionParts[4]};User Id={connectionParts[0]};password={connectionParts[1]};port={connectionParts[3]}";
         }
 
-        public DbSet<BambooFinder.Models.Nurseries> Nurseries { get; set; }
+
     }
 }

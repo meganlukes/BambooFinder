@@ -41,7 +41,7 @@ namespace BambooFinder.Controllers
             }
             else
             {
-                return await _context.Species.Where(restaurant => restaurant.Name.ToLower().Contains(filter.ToLower())).ToListAsync();
+                return await _context.Species.Where(species => species.Name.ToLower().Contains(filter.ToLower())).ToListAsync();
             }
 
         }

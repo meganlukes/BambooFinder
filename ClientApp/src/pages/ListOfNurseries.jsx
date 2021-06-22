@@ -1,24 +1,32 @@
-import React from 'react'
-
+import React, { useState, Component, useEffect } from 'react'
 export function ListOfNurseries() {
+  const [filterText, setFilterText] = useState('')
+
   return (
     <div>
       <header>
         <h2>Nurseries</h2>
       </header>
       <form>
-        <input type="text" placeholder="Search..." />
+        <input
+          type="text"
+          placeholder="Search..."
+          value={filterText}
+          onChange={function (event) {
+            setFilterText(event.target.value)
+          }}
+        />
       </form>
       <table>
         <tr>
           <th>Name</th>
           <th>Location</th>
-          <th>Ship Out of State?</th>
+          <th>Ship?</th>
         </tr>
         <tr>
           <td>Wilson Bros Gardens</td>
           <td>McDonough, GA</td>
-          <td>Yes</td>
+          <td>Lower 48 States</td>
         </tr>
         <tr>
           <td>Bamboo Plants Online</td>
@@ -28,7 +36,12 @@ export function ListOfNurseries() {
         <tr>
           <td>Bamboo Garden</td>
           <td>Portland, OR</td>
-          <td>Yes</td>
+          <td>Lower 48 States</td>
+        </tr>
+        <tr>
+          <td>Whispering Winds Bamboo</td>
+          <td>Kipahula, HI</td>
+          <td>Within Hawaii</td>
         </tr>
       </table>
     </div>

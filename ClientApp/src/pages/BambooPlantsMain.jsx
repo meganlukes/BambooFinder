@@ -12,12 +12,13 @@ import usdazones from '../Images/usdazones.jpg'
 
 //http://www.bamboogarden.com/Smaller%20Running%20Bamboos.htm
 export function BambooPlantsMain() {
+  const [filterText, setFilterText] = useState('')
   const [plants, setPlants] = useState([])
 
   useEffect(() => {
     async function loadPlants() {
       const response = await fetch('/api/Species')
-      if (response.code === 200) {
+      if (response.status === 200) {
         const json = await response.json()
         setPlants(json)
       }
@@ -33,7 +34,14 @@ export function BambooPlantsMain() {
       </header>
       <p>Find the bamboo that's right for you.</p>
       <form>
-        <input type="text" placeholder="Search..." />
+        <input
+          type="text"
+          placeholder="Search..."
+          value={filterText}
+          onChange={function (event) {
+            setFilterText(event.target.value)
+          }}
+        />
       </form>
       <label>USDA Plant Hardiness Zones</label>
       <div>

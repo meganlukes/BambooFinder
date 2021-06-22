@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace BambooFinder.Models
 {
-    public class Nurseries
+    public class Nursery
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,6 +14,7 @@ namespace BambooFinder.Models
         public string State { get; set; }
         public string Zipcode { get; set; }
         public string Description { get; set; }
+        public string Website { get; set; }
         public List<Species> Inventory { get; set; }
     }
 }

@@ -31,7 +31,7 @@ namespace BambooFinder.Controllers
         // Returns a list of all your Nurseries
         //
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Nurseries>>> GetNurseries()
+        public async Task<ActionResult<IEnumerable<Nursery>>> GetNurseries()
         {
             // Uses the database context in `_context` to request all of the Nurseries, sort
             // them by row id and return them as a JSON array.
@@ -45,7 +45,7 @@ namespace BambooFinder.Controllers
         // to grab the id from the URL. It is then made available to us as the `id` argument to the method.
         //
         [HttpGet("{id}")]
-        public async Task<ActionResult<Nurseries>> GetNurseries(int id)
+        public async Task<ActionResult<Nursery>> GetNurseries(int id)
         {
             // Find the nurseries in the database using `FindAsync` to look it up by id
             var nurseries = await _context.Nurseries.FindAsync(id);
@@ -73,7 +73,7 @@ namespace BambooFinder.Controllers
         // new values for the record.
         //
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutNurseries(int id, Nurseries nurseries)
+        public async Task<IActionResult> PutNurseries(int id, Nursery nurseries)
         {
             // If the ID in the URL does not match the ID in the supplied request body, return a bad request
             if (id != nurseries.Id)
@@ -122,7 +122,7 @@ namespace BambooFinder.Controllers
         // new values for the record.
         //
         [HttpPost]
-        public async Task<ActionResult<Nurseries>> PostNurseries(Nurseries nurseries)
+        public async Task<ActionResult<Nursery>> PostNurseries(Nursery nurseries)
         {
             // Indicate to the database context we want to add this new record
             _context.Nurseries.Add(nurseries);

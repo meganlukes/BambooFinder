@@ -17,7 +17,7 @@ namespace BambooFinder.Models
         public int MaxZone { get; set; }
         public int MinLight { get; set; }
         public int MaxLight { get; set; }
-        public List<Nurseries> Sellers { get; set; }
+        public List<Nursery> Sellers { get; set; }
     }
 }
 // psql --file=Models/exampledata.sql BambooFinderDatabase

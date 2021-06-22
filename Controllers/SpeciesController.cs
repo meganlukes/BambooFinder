@@ -37,11 +37,11 @@ namespace BambooFinder.Controllers
             // them by row id and return them as a JSON array.
             if (filter == null)
             {
-                return await _context.Species.OrderBy(row => row.Id).ToListAsync();
+                return await _context.Species.ToListAsync();
             }
             else
             {
-                return await _context.Species.Where(species => species.Name.ToLower().Contains(filter.ToLower())).ToListAsync();
+                return await _context.Species.Where(restaurant => restaurant.Name.ToLower().Contains(filter.ToLower())).ToListAsync();
             }
 
         }

@@ -17,14 +17,18 @@ export function BambooPlantsMain() {
 
   useEffect(() => {
     async function loadPlants() {
-      const response = await fetch('/api/Species')
+      const url =
+        filterText.length === 0
+          ? '/api/Species'
+          : `/api/Species?filter=${filterText}`
+      const response = await fetch(url)
       if (response.status === 200) {
         const json = await response.json()
         setPlants(json)
       }
     }
     loadPlants()
-  }, [])
+  }, [filterText])
 
   return (
     <div>

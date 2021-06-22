@@ -1,6 +1,23 @@
 import React, { useState, Component, useEffect } from 'react'
+import { BambooPlantsMain } from './BambooPlantsMain'
 export function ListOfNurseries() {
   const [filterText, setFilterText] = useState('')
+  const [nurseries, setNurseries] = useState([])
+
+  useEffect(() => {
+    async function loadNurseries() {
+      const url =
+        filterText.length === 0
+          ? '/api/Nurseries'
+          : `/api/Nurseries?filter=${filterText}`
+      const response = await fetch(url)
+      if (response.status === 200) {
+        const json = await response.json()
+        setNurseries(json)
+      }
+    }
+    loadNurseries()
+  }, [filterText])
 
   return (
     <div>
@@ -21,28 +38,22 @@ export function ListOfNurseries() {
         <tr>
           <th>Name</th>
           <th>Location</th>
-          <th>Ship?</th>
+          <th>Ship Out of State?</th>
         </tr>
         <tr>
           <td>Wilson Bros Gardens</td>
           <td>McDonough, GA</td>
           <td>Lower 48 States</td>
         </tr>
-        <tr>
-          <td>Bamboo Plants Online</td>
-          <td>Labelle, FL</td>
-          <td>Yes</td>
-        </tr>
-        <tr>
-          <td>Bamboo Garden</td>
-          <td>Portland, OR</td>
-          <td>Lower 48 States</td>
-        </tr>
-        <tr>
-          <td>Whispering Winds Bamboo</td>
-          <td>Kipahula, HI</td>
-          <td>Within Hawaii</td>
-        </tr>
+        {nurseries.map((nursery) => (
+          <tr>
+            <td>{nursery.name}</td>
+            <td>
+              {nursery.city}, {nursery.state}
+            </td>
+            <td>{nursery.shipping}</td>
+          </tr>
+        ))}
       </table>
     </div>
   )

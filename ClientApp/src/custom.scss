@@ -36,28 +36,33 @@ header {
   padding-right: 0rem;
   width: 100%;
 }
-.mainHeader h1 {
+.mainHeader {
   font-family: 'Indie Flower', cursive;
   font-size: 45px;
 }
 
-h1 {
-  padding-top: 2vh;
+h4 {
+  padding-top: 0vh;
   padding-bottom: 1vh;
   margin: 0px;
   margin-left: 0rem;
   width: 100%;
-  font-size: 30px;
+  font-size: 40px;
 }
 h2 {
   font-size: 35px;
   padding-top: 2vh;
-  padding-bottom: 1vh;
+  padding-bottom: 0.5vh;
   margin: 0px;
   margin-left: 0rem;
   width: 100%;
   font-family: 'Indie Flower', cursive;
 }
+h3 {
+  padding-bottom: 15px;
+  margin-top: 5px;
+}
+
 form {
   padding: 10px;
 }
@@ -86,7 +91,7 @@ table {
   background-color: rgb(255, 254, 254, 0.8);
   padding-left: 1rem;
   padding-right: 1rem;
-  max-width: 900px;
+  max-width: 400px;
   margin-left: auto;
   margin-right: auto;
 }

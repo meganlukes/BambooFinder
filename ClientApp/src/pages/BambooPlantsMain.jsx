@@ -34,9 +34,10 @@ export function BambooPlantsMain() {
     <div>
       <header>
         <h2>BambooFinder.com</h2>
-        <h1>Bamboo Plants</h1>
+        <h4>Bamboo Plants</h4>
+        <h3>Find the bamboo that's right for you</h3>
       </header>
-      <p className="para">Find the bamboo that's right for you.</p>
+
       <form>
         <input
           type="text"

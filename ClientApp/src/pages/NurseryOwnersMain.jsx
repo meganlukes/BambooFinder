@@ -5,7 +5,9 @@ export function NurseryOwnersMain() {
   return (
     <div>
       <header>
-        <h2>BambooFinder.com</h2>
+        <h2>
+          <Link to="/">BambooFinder.com</Link>
+        </h2>
         <h4>Nursery Owners</h4>
         <h3>
           Add Your Nursery to BambooFinder.com to Connect with New Customers

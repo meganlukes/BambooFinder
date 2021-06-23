@@ -33,7 +33,9 @@ export function BambooPlantsMain() {
   return (
     <div>
       <header>
-        <h2>BambooFinder.com</h2>
+        <h2>
+          <Link to="/">BambooFinder.com</Link>
+        </h2>
         <h4>Bamboo Plants</h4>
         <h3>Find the bamboo that's right for you</h3>
       </header>

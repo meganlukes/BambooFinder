@@ -24,6 +24,9 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+main {
+  padding-bottom: 1rem;
+}
 .big {
   margin-left: 0rem;
   padding-left: 0rem;
@@ -218,5 +221,19 @@ input {
   flex-direction: row;
   text-align: left;
 }
-form {
+a,
+a:link {
+  color: black;
+}
+a:visited {
+  color: rgb(193, 236, 122);
+}
+a:focus {
+  color: black;
+}
+a:hover {
+  color: white;
+}
+a:active {
+  color: black;
 }

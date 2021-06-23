@@ -1,5 +1,6 @@
 import React, { useState, Component, useEffect } from 'react'
 import { BambooPlantsMain } from './BambooPlantsMain'
+import { Link, Route, Switch, useParams } from 'react-router-dom'
 export function ListOfNurseries() {
   const [filterText, setFilterText] = useState('')
   const [nurseries, setNurseries] = useState([])
@@ -22,7 +23,9 @@ export function ListOfNurseries() {
   return (
     <div>
       <header>
-        <h2>BambooFinder.com</h2>
+        <h2>
+          <Link to="/">BambooFinder.com</Link>
+        </h2>
         <h4>Bamboo Nurseries</h4>
       </header>
       <form>
@@ -48,7 +51,7 @@ export function ListOfNurseries() {
             <td>
               {nursery.city}, {nursery.state}
             </td>
-            <td>{nursery.shipping}</td>
+            <td>{nursery.shipping ? 'Yes' : 'No'}</td>
           </tr>
         ))}
       </table>

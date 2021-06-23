@@ -4,7 +4,7 @@ import axios from 'axios'
 import { SetZone } from '../components/SetZone'
 import { SetGrowthHabit } from '../components/SetGrowthHabit'
 import { SetSize } from '../components/SetSize'
-import { SetSun } from '../components/SetSun'
+
 import bluechungii from '../Images/bluechungii.jpg'
 import bluechungii2 from '../Images/bluechungii4.jpg'
 import runningclumping from '../Images/runningclumping.jpg'
@@ -36,7 +36,7 @@ export function BambooPlantsMain() {
         <h1>BambooFinder.com</h1>
         <h2>Bamboo Plants</h2>
       </header>
-      <p>Find the bamboo that's right for you.</p>
+      <p className="para">Find the bamboo that's right for you.</p>
       <form>
         <input
           type="text"
@@ -47,14 +47,11 @@ export function BambooPlantsMain() {
           }}
         />
       </form>
-      <label>USDA Plant Hardiness Zones</label>
-      <div>
-        <img
-          src={usdazones}
-          alt="Map of the US showing the different USDA cold hardiness zones."
-          width="300"
-        />
-        <p>
+      <label className="para">USDA Plant Hardiness Zones</label>
+      <p className="para">
+        Click <a href="https://planthardiness.ars.usda.gov/PHZMWeb/">here</a> to
+        find your USDA zone
+        <details>
           USDA hardiness zones are used to describe a plant's cold-tolerance.
           Bamboo can be grown outside its hardiness zone if it is kept in a
           container and moved indoors in the winter, or if it is kept indoors as
@@ -63,33 +60,129 @@ export function BambooPlantsMain() {
           might not be able to tolerate the heat and humidity of the southeast,
           or it might be stunted by the lower temperatures of the pacific
           northwest.
-        </p>
-      </div>
+        </details>
+      </p>
       <SetZone />
-      <label>Clumping or Running</label>
-      <div>
-        <img
-          src={runningclumping}
-          alt="Diagram showing the difference between running and clumping bamboo."
-          width="200"
-        />
-        <p>
+      <label className="para">Clumping or Running</label>
+      <p className="para">
+        <details>
           Clumping bamboo sends out shoots from a single large rhizome while the
           running bamboo sends rhizomes away from the initial rhizome and then a
           single shoot emerges from that smaller rhizome. A barrier can be used
           to keep running bamboo contained to a single area. One benefit of
           running bamboo is that a larger area can be covered with fewer plants;
           clumping bamboos have a fixed maximum footprint.
-        </p>
+        </details>
+      </p>
+      <div>
+        <img
+          src={runningclumping}
+          alt="Diagram showing the difference between running and clumping bamboo."
+          width="200"
+        />
+        <details className="para">
+          Clumping bamboo sends out shoots from a single large rhizome while the
+          running bamboo sends rhizomes away from the initial rhizome and then a
+          single shoot emerges from that smaller rhizome. A barrier can be used
+          to keep running bamboo contained to a single area. One benefit of
+          running bamboo is that a larger area can be covered with fewer plants;
+          clumping bamboos have a fixed maximum footprint.
+        </details>
       </div>
-      <SetGrowthHabit />
-      <label>Sun Requirements</label>
-      <SetSun />
+
+      <div className="background">
+        <label>Growth Habit</label>
+
+        <div>
+          <input
+            type="radio"
+            id="running"
+            name="growthhabit"
+            value="running"
+            checked
+          />
+          <label for="running">Running</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="clumping"
+            name="growthhabit"
+            value="clumping"
+            checked
+          />
+          <label for="clumping">Clumping</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="either"
+            name="growthhabit"
+            value="either"
+            checked
+          />
+          <label for="either">No Preference</label>
+        </div>
+      </div>
+      <div className="background">
+        <label>Sun Requirements</label>
+        <div>
+          <input
+            type="radio"
+            id="shade"
+            name="sunlight"
+            value="shade"
+            checked
+          />
+          <label for="shade">Shade</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="partshade"
+            name="sunlight"
+            value="partshade"
+            checked
+          />
+          <label for="partshade">Part Shade</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="partsun"
+            name="sunlight"
+            value="partsun"
+            checked
+          />
+          <label for="partsun">Part Sun</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="fullsun"
+            name="sunlight"
+            value="fullsun"
+            checked
+          />
+          <label for="fullsun">Full Sun</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="either"
+            name="sunlight"
+            value="either"
+            checked
+          />
+          <label for="either">No Preference</label>
+        </div>
+      </div>
+
       <label>Adult Height</label>
       <SetSize />
       <ol className="bambooList">
         {plants.map((plant) => (
-          <ol className="bambooListItem" key={plant.id}>
+          <ol className="bambooListItem" key={plant}>
             <img
               src={bluechungii}
               alt="Woman standing next to bamboo"

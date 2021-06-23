@@ -35,7 +35,6 @@ header {
   padding-left: 0rem;
   padding-right: 0rem;
   margin: 0rem;
-
   font-family: 'Indie Flower', cursive;
 }
 h1 {
@@ -70,7 +69,7 @@ table {
   margin-left: auto;
   margin-right: auto;
 }
-p {
+.para {
   font-size: 1rem;
   background-color: rgb(255, 254, 254, 0.8);
   padding-left: 1rem;
@@ -84,7 +83,6 @@ button {
 }
 label {
   color: rgb(57, 63, 95);
-  font-weight: bold;
 }
 .bambooListItem {
   background-color: rgba(122, 153, 72, 0.9);
@@ -160,4 +158,13 @@ ul {
 }
 span {
   text-decoration: underline;
+}
+.addForm {
+  border-radius: 5px;
+  background-color: wheat;
+  padding: 10px;
+  text-align: left;
+}
+.background {
+  background-color: white;
 }

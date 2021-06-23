@@ -33,8 +33,8 @@ export function BambooPlantsMain() {
   return (
     <div>
       <header>
-        <h1>BambooFinder.com</h1>
-        <h2>Bamboo Plants</h2>
+        <h2>BambooFinder.com</h2>
+        <h1>Bamboo Plants</h1>
       </header>
       <p className="para">Find the bamboo that's right for you.</p>
       <form>
@@ -47,8 +47,9 @@ export function BambooPlantsMain() {
           }}
         />
       </form>
-      <label className="para">USDA Plant Hardiness Zones</label>
+
       <p className="para">
+        <SetZone />
         Click <a href="https://planthardiness.ars.usda.gov/PHZMWeb/">here</a> to
         find your USDA zone
         <details>
@@ -62,9 +63,16 @@ export function BambooPlantsMain() {
           northwest.
         </details>
       </p>
-      <SetZone />
-      <label className="para">Clumping or Running</label>
+
       <p className="para">
+        Clumping or Running
+        <div>
+          <img
+            src={runningclumping}
+            alt="Diagram showing the difference between running and clumping bamboo."
+            width="400"
+          />
+        </div>
         <details>
           Clumping bamboo sends out shoots from a single large rhizome while the
           running bamboo sends rhizomes away from the initial rhizome and then a
@@ -74,21 +82,6 @@ export function BambooPlantsMain() {
           clumping bamboos have a fixed maximum footprint.
         </details>
       </p>
-      <div>
-        <img
-          src={runningclumping}
-          alt="Diagram showing the difference between running and clumping bamboo."
-          width="200"
-        />
-        <details className="para">
-          Clumping bamboo sends out shoots from a single large rhizome while the
-          running bamboo sends rhizomes away from the initial rhizome and then a
-          single shoot emerges from that smaller rhizome. A barrier can be used
-          to keep running bamboo contained to a single area. One benefit of
-          running bamboo is that a larger area can be covered with fewer plants;
-          clumping bamboos have a fixed maximum footprint.
-        </details>
-      </div>
 
       <div className="background">
         <label>Growth Habit</label>

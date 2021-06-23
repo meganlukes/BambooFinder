@@ -19,6 +19,24 @@ function AddBamboo() {
     MinZone: 1,
     MaxZone: 13,
   })
+  function handleStringFieldChange(event) {
+    const value = event.target.value
+    const fieldName = event.target.name
+
+    setNewBamboo({ ...newBamboo, [fieldName]: value })
+  }
+  function handleIntFieldChange(event) {
+    const value = event.target.value
+    const fieldName = event.target.name
+
+    setNewBamboo({ ...newBamboo, [fieldName]: value })
+  }
+  function handleBoolFieldChange(event) {
+    const value = event.target.value
+    const fieldName = event.target.Name
+
+    setNewBamboo({ ...newBamboo, [fieldName]: value })
+  }
   return (
     <>
       <header>
@@ -34,6 +52,7 @@ function AddBamboo() {
             placeholder="ex. Bambusa gracilis"
             name="Name"
             value={newBamboo.Name}
+            onChange={handleStringFieldChange}
           />
           <div>Common Name (optional)</div>
           <input
@@ -42,15 +61,9 @@ function AddBamboo() {
             placeholder="ex. Graceful Bamboo"
             // name="CommonName"
             // value={newBamboo.CommonName}
+            // onChange={handleStringFieldChange}
           />
-          <div>Additional Information (optional)</div>
-          <input
-            type="text"
-            className="inputBigBox"
-            placeholder="ex. Graceful Bamboo is an easy to care for species"
-            name="Info"
-            value={newBamboo.Info}
-          />
+
           <div>Growth Habit</div>
           <div>
             <input
@@ -58,6 +71,7 @@ function AddBamboo() {
               id="false"
               name="Clumping"
               value={newBamboo.Clumping}
+              onChange={handleBoolFieldChange}
               checked
             />
             <label for="running">Running</label>
@@ -68,6 +82,7 @@ function AddBamboo() {
               id="true"
               name="Clumping"
               value={newBamboo.Clumping}
+              onChange={handleBoolFieldChange}
               checked
             />
             <label for="clumping">Clumping</label>
@@ -83,16 +98,18 @@ function AddBamboo() {
               min="1"
               max="13"
               value={newBamboo.MinZone}
+              onChange={handleIntFieldChange}
             ></input>{' '}
             to{' '}
             <input
               className="inputTinyBox"
               type="number"
-              id="maxZone"
-              name="maxZone"
+              id="MaxZone"
+              name="MaxZone"
               min="1"
               max="13"
               value={newBamboo.MaxZone}
+              onChange={handleIntFieldChange}
             ></input>
             ft.
           </label>
@@ -107,6 +124,7 @@ function AddBamboo() {
               min="1"
               max="4"
               value={newBamboo.MinLight}
+              onChange={handleIntFieldChange}
             ></input>{' '}
             to{' '}
             <input
@@ -117,6 +135,7 @@ function AddBamboo() {
               min="1"
               max="4"
               value={newBamboo.MaxLight}
+              onChange={handleIntFieldChange}
             ></input>
           </label>
           <div>Mature Height Range</div>
@@ -130,19 +149,30 @@ function AddBamboo() {
               min="1"
               max="150"
               value={newBamboo.MinHeight}
+              onChange={handleIntFieldChange}
             ></input>
             ft to{' '}
             <input
               className="inputTinyBox"
               type="number"
-              id="maxHeight"
-              name="maxHeight"
+              id="MaxHeight"
+              name="MaxHeight"
               min="1"
               max="150"
               value={newBamboo.MaxHeight}
+              onChange={handleIntFieldChange}
             ></input>
             ft.
           </label>
+          <div>Additional Information (optional)</div>
+          <input
+            type="text"
+            className="inputBigBox"
+            placeholder="ex. Graceful Bamboo is an easy to care for species"
+            name="Info"
+            value={newBamboo.Info}
+            onChange={handleStringFieldChange}
+          />
         </form>
       </div>
     </>

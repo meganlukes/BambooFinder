@@ -3,7 +3,7 @@ import React from 'react'
 export function FrontPage() {
   return (
     <div>
-      <header>
+      <header className="mainHeader">
         <h1>BambooFinder.com</h1>
       </header>
       <button className="big">Find the Best Bamboo for Me</button>

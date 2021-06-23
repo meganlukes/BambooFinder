@@ -162,9 +162,25 @@ span {
 .addForm {
   border-radius: 5px;
   background-color: wheat;
-  padding: 10px;
+  padding: 20px;
   text-align: left;
+  max-width: 800px;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .background {
   background-color: white;
+}
+input {
+  font-size: 1rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.inputBigBox {
+  width: 780px;
+  height: 100px;
+}
+.inputLittleBox {
+  width: 300px;
 }

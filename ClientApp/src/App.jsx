@@ -28,15 +28,72 @@ function AddBamboo() {
       <div className="addForm">
         <form>
           <div>Species Name</div>
-          <input type="text" placeholder="ex. Bambusa gracilis" />
+          <input
+            type="text"
+            className="inputLittleBox"
+            placeholder="ex. Bambusa gracilis"
+            name="name"
+            value={newBamboo.Name}
+          />
           <div>Common Name (optional)</div>
-          <input type="text" placeholder="ex. Graceful Bamboo" />
+          <input
+            type="text"
+            className="inputLittleBox"
+            placeholder="ex. Graceful Bamboo"
+            // name="CommonName"
+            // value="{newBamboo.CommonName}"
+          />
           <div>Additional Information (optional)</div>
           <input
             type="text"
+            className="inputBigBox"
             placeholder="ex. Graceful Bamboo is an easy to care for species"
+            name={newBamboo.Name}
           />
           <div>Growth Habit</div>
+          <div>
+            <input
+              type="radio"
+              id="false"
+              name="Clumping"
+              value={newBamboo.Clumping}
+              checked
+            />
+            <label for="running">Running</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="true"
+              name="Clumping"
+              value={newBamboo.Clumping}
+              checked
+            />
+            <label for="clumping">Clumping</label>
+          </div>
+          <div>Mature Height Range</div>
+          <label>
+            From{' '}
+            <input
+              type="number"
+              id="minheight"
+              name="minheight"
+              min="1"
+              max="150"
+              value={newBamboo.MinHeight}
+            ></input>
+            ft to{' '}
+            <input
+              type="number"
+              id="maxheight"
+              name="maxheight"
+              min="1"
+              max="150"
+              value={newBamboo.MaxHeight}
+            ></input>
+            ft.
+          </label>
+          {/* <div>Minimum Light</div>
           <div>
             <input
               type="radio"
@@ -56,27 +113,7 @@ function AddBamboo() {
               checked
             />
             <label for="clumping">Clumping</label>
-          </div>
-          <div>Mature Height Range</div>
-          <label>
-            From{' '}
-            <input
-              type="number"
-              id="minlight"
-              name="minlight"
-              min="1"
-              max="150"
-            ></input>
-            ft to{' '}
-            <input
-              type="number"
-              id="maxlight"
-              name="maxlight"
-              min="2"
-              max="150"
-            ></input>
-            ft.
-          </label>
+          </div> */}
         </form>
       </div>
     </>

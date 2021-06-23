@@ -11,6 +11,7 @@ function AddBamboo() {
   const [newBamboo, setNewBamboo] = useState({
     Name: '',
     Info: '',
+    CommonName: '',
     MinHeight: 1,
     MaxHeight: 150,
     Clumping: true,
@@ -59,9 +60,9 @@ function AddBamboo() {
             type="text"
             className="inputLittleBox"
             placeholder="ex. Graceful Bamboo"
-            // name="CommonName"
-            // value={newBamboo.CommonName}
-            // onChange={handleStringFieldChange}
+            name="CommonName"
+            value={newBamboo.CommonName}
+            onChange={handleStringFieldChange}
           />
 
           <div>Growth Habit</div>

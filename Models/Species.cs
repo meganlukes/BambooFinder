@@ -6,6 +6,7 @@ namespace BambooFinder.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string CommonName { get; set; }
         public string Info { get; set; }
         public int MinHeight { get; set; }
         public int MaxHeight

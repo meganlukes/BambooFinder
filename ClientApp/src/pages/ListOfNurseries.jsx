@@ -22,7 +22,8 @@ export function ListOfNurseries() {
   return (
     <div>
       <header>
-        <h2>Nurseries</h2>
+        <h2>BambooFinder.com</h2>
+        <h4>Bamboo Nurseries</h4>
       </header>
       <form>
         <input

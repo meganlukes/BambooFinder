@@ -47,7 +47,7 @@ h2 {
   font-size: 28px;
 }
 form {
-  margin-bottom: 15px;
+  padding: 10px;
 }
 .zipInput {
   align-items: flex-end;
@@ -162,9 +162,9 @@ span {
 .addForm {
   border-radius: 5px;
   background-color: wheat;
-  padding: 20px;
+
   text-align: left;
-  max-width: 800px;
+  max-width: 780px;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
@@ -178,9 +178,13 @@ input {
   margin-bottom: 5px;
 }
 .inputBigBox {
-  width: 780px;
+  width: 98%;
+  max-width: 780px;
   height: 100px;
 }
 .inputLittleBox {
   width: 300px;
+}
+.inputTinyBox {
+  width: 50px;
 }

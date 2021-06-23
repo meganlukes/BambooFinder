@@ -11,13 +11,13 @@ function AddBamboo() {
   const [newBamboo, setNewBamboo] = useState({
     Name: '',
     Info: '',
-    MinHeight: '',
-    MaxHeight: '',
-    Clumping: '',
-    MinLight: '',
-    MaxLight: '',
-    MinZone: '',
-    MaxZone: '',
+    MinHeight: 1,
+    MaxHeight: 150,
+    Clumping: true,
+    MinLight: 1,
+    MaxLight: 4,
+    MinZone: 1,
+    MaxZone: 13,
   })
   return (
     <>
@@ -32,7 +32,7 @@ function AddBamboo() {
             type="text"
             className="inputLittleBox"
             placeholder="ex. Bambusa gracilis"
-            name="name"
+            name="Name"
             value={newBamboo.Name}
           />
           <div>Common Name (optional)</div>
@@ -41,14 +41,15 @@ function AddBamboo() {
             className="inputLittleBox"
             placeholder="ex. Graceful Bamboo"
             // name="CommonName"
-            // value="{newBamboo.CommonName}"
+            // value={newBamboo.CommonName}
           />
           <div>Additional Information (optional)</div>
           <input
             type="text"
             className="inputBigBox"
             placeholder="ex. Graceful Bamboo is an easy to care for species"
-            name={newBamboo.Name}
+            name="Info"
+            value={newBamboo.Info}
           />
           <div>Growth Habit</div>
           <div>
@@ -71,49 +72,77 @@ function AddBamboo() {
             />
             <label for="clumping">Clumping</label>
           </div>
+          <div>Growing Zone</div>
+          <label>
+            From{' '}
+            <input
+              className="inputTinyBox"
+              type="number"
+              id="MinZone"
+              name="MinZone"
+              min="1"
+              max="13"
+              value={newBamboo.MinZone}
+            ></input>{' '}
+            to{' '}
+            <input
+              className="inputTinyBox"
+              type="number"
+              id="maxZone"
+              name="maxZone"
+              min="1"
+              max="13"
+              value={newBamboo.MaxZone}
+            ></input>
+            ft.
+          </label>
+          <div>Light Requirements</div>
+          <div>(Shade = 1, Part Shade = 2, Part Sun = 3, Full Sun = 4)</div>
+          <label>
+            <input
+              className="inputTinyBox"
+              type="number"
+              id="MinLight"
+              name="MinLight"
+              min="1"
+              max="4"
+              value={newBamboo.MinLight}
+            ></input>{' '}
+            to{' '}
+            <input
+              className="inputTinyBox"
+              type="number"
+              id="MaxLight"
+              name="MaxLight"
+              min="1"
+              max="4"
+              value={newBamboo.MaxLight}
+            ></input>
+          </label>
           <div>Mature Height Range</div>
           <label>
             From{' '}
             <input
+              className="inputTinyBox"
               type="number"
-              id="minheight"
-              name="minheight"
+              id="MinHeight"
+              name="MinHeight"
               min="1"
               max="150"
               value={newBamboo.MinHeight}
             ></input>
             ft to{' '}
             <input
+              className="inputTinyBox"
               type="number"
-              id="maxheight"
-              name="maxheight"
+              id="maxHeight"
+              name="maxHeight"
               min="1"
               max="150"
               value={newBamboo.MaxHeight}
             ></input>
             ft.
           </label>
-          {/* <div>Minimum Light</div>
-          <div>
-            <input
-              type="radio"
-              id="running"
-              name="growthhabit"
-              value="running"
-              checked
-            />
-            <label for="running">Running</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              id="clumping"
-              name="growthhabit"
-              value="clumping"
-              checked
-            />
-            <label for="clumping">Clumping</label>
-          </div> */}
         </form>
       </div>
     </>

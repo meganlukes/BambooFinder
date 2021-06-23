@@ -183,30 +183,20 @@ export function BambooPlantsMain() {
               width="200"
             />
             <li>
-              <i>{plant.name}</i>
+              <i>{plant.name}</i> {plant.commonName}
             </li>
-            <li>Zone: 9a-11b</li>
+            <li>
+              Zone: {plant.minZone} - {plant.maxZone}
+            </li>
             <li>Full Sun to Part Shade</li>
             <ul>
               <li>
-                Height: {plant.minHeight}-{plant.maxHeight}
+                Height: {plant.minHeight}ft-{plant.maxHeight}ft
               </li>
-              <li>Clumping</li>
+              <li>{plant.clumping}</li>
             </ul>
           </ol>
         ))}
-        <ol className="bambooListItem">
-          <img src={bluechungii2} alt="Bamboo" width="200" />
-          <li>
-            <i>Blue Chungii</i>
-          </li>
-          <li>Zone: 9a-11b</li>
-          <li>Full Sun to Part Shade</li>
-          <ul>
-            <li>Height: 30ft</li>
-            <li>Clumping</li>
-          </ul>
-        </ol>
       </ol>
     </div>
   )

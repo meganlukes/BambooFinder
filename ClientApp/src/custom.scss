@@ -205,3 +205,8 @@ input {
 .inputTinyBox {
   width: 50px;
 }
+.flexinput {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}

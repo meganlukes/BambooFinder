@@ -84,92 +84,95 @@ export function BambooPlantsMain() {
         </details>
       </p>
 
-      <div className="background">
-        <label>Growth Habit</label>
-
-        <div>
-          <input
-            type="radio"
-            id="running"
-            name="growthhabit"
-            value="running"
-            checked
-          />
-          <label for="running">Running</label>
-        </div>
-        <div>
-          <input
-            type="radio"
-            id="clumping"
-            name="growthhabit"
-            value="clumping"
-            checked
-          />
-          <label for="clumping">Clumping</label>
-        </div>
-        <div>
-          <input
-            type="radio"
-            id="either"
-            name="growthhabit"
-            value="either"
-            checked
-          />
-          <label for="either">No Preference</label>
-        </div>
-      </div>
-      <div className="background">
-        <label>Sun Requirements</label>
-        <div>
-          <input
-            type="radio"
-            id="shade"
-            name="sunlight"
-            value="shade"
-            checked
-          />
-          <label for="shade">Shade</label>
-        </div>
-        <div>
-          <input
-            type="radio"
-            id="partshade"
-            name="sunlight"
-            value="partshade"
-            checked
-          />
-          <label for="partshade">Part Shade</label>
-        </div>
-        <div>
-          <input
-            type="radio"
-            id="partsun"
-            name="sunlight"
-            value="partsun"
-            checked
-          />
-          <label for="partsun">Part Sun</label>
-        </div>
-        <div>
-          <input
-            type="radio"
-            id="fullsun"
-            name="sunlight"
-            value="fullsun"
-            checked
-          />
-          <label for="fullsun">Full Sun</label>
-        </div>
-        <div>
-          <input
-            type="radio"
-            id="either"
-            name="sunlight"
-            value="either"
-            checked
-          />
-          <label for="either">No Preference</label>
-        </div>
+      <div className="para">
+        <ul className="flexinput">
+          <li>
+            <label>Growth Habit</label>
+            <div>
+              <input
+                type="radio"
+                id="running"
+                name="growthhabit"
+                value="running"
+                checked
+              />
+              <label for="running">Running</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="clumping"
+                name="growthhabit"
+                value="clumping"
+                checked
+              />
+              <label for="clumping">Clumping</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="either"
+                name="growthhabit"
+                value="either"
+                checked
+              />
+              <label for="either">No Preference</label>
+            </div>
+          </li>
+          <li>
+            <label>Sun Requirements</label>
+            <div>
+              <input
+                type="radio"
+                id="shade"
+                name="sunlight"
+                value="shade"
+                checked
+              />
+              <label for="shade">Shade</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="partshade"
+                name="sunlight"
+                value="partshade"
+                checked
+              />
+              <label for="partshade">Part Shade</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="partsun"
+                name="sunlight"
+                value="partsun"
+                checked
+              />
+              <label for="partsun">Part Sun</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="fullsun"
+                name="sunlight"
+                value="fullsun"
+                checked
+              />
+              <label for="fullsun">Full Sun</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                id="either"
+                name="sunlight"
+                value="either"
+                checked
+              />
+              <label for="either">No Preference</label>
+            </div>
+          </li>
+        </ul>
       </div>
 
       <label>Adult Height</label>

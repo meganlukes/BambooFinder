@@ -27,17 +27,31 @@ function AddBamboo() {
     setNewBamboo({ ...newBamboo, [fieldName]: value })
   }
   function handleIntFieldChange(event) {
-    const value = event.target.value
+    const value = Number(event.target.value)
     const fieldName = event.target.name
 
     setNewBamboo({ ...newBamboo, [fieldName]: value })
   }
   function handleBoolFieldChange(event) {
-    const value = event.target.value
-    const fieldName = event.target.Name
+    const value = event.target.checked
+    const fieldName = event.target.name
 
     setNewBamboo({ ...newBamboo, [fieldName]: value })
   }
+  async function handleFormSubmit(event) {
+    event.preventDefault()
+
+    const response = await fetch('/api/Species', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(newBamboo),
+    })
+
+    if (response.ok) {
+      console.log('Bamboo successfully added')
+    }
+  }
+
   return (
     <>
       <header>
@@ -45,7 +59,7 @@ function AddBamboo() {
         <h4>Add a New Bamboo Species</h4>
       </header>
       <div className="addForm">
-        <form>
+        <form onSubmit={handleFormSubmit}>
           <div>Species Name</div>
           <input
             type="text"
@@ -174,6 +188,7 @@ function AddBamboo() {
             value={newBamboo.Info}
             onChange={handleStringFieldChange}
           />
+          <input type="submit" value="submit" />
         </form>
       </div>
     </>

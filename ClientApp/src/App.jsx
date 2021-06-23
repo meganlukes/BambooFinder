@@ -41,7 +41,7 @@ function AddBamboo() {
     <>
       <header>
         <h2>BambooFinder.com</h2>
-        <h1>Add a New Bamboo Species</h1>
+        <h4>Add a New Bamboo Species</h4>
       </header>
       <div className="addForm">
         <form>

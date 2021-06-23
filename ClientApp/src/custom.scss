@@ -192,6 +192,7 @@ span {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
 }
 .background {
   background-color: white;
@@ -216,4 +217,6 @@ input {
   display: flex;
   flex-direction: row;
   text-align: left;
+}
+form {
 }

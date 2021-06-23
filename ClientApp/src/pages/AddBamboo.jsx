@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 export function AddBamboo() {
   const [newBamboo, setNewBamboo] = useState({
@@ -13,6 +14,7 @@ export function AddBamboo() {
     MinZone: 1,
     MaxZone: 13,
   })
+  // const history = useHistory()
   function handleStringFieldChange(event) {
     const value = event.target.value
     const fieldName = event.target.name
@@ -42,6 +44,7 @@ export function AddBamboo() {
 
     if (response.ok) {
       console.log('Bamboo successfully added')
+      // history.push('/bamboo-owners')
     }
   }
 

@@ -198,7 +198,7 @@ export function BambooPlantsMain() {
               <li>
                 Height: {plant.minHeight}ft-{plant.maxHeight}ft
               </li>
-              <li>{plant.clumping}</li>
+              <li>{plant.clumping ? 'Clumping' : 'Running'}</li>
             </ul>
           </ol>
         ))}

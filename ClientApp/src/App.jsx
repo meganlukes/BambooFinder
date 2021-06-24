@@ -1,5 +1,5 @@
 import React, { Component, useEffect } from 'react'
-import { Link, Route, Switch, useParams } from 'react-router-dom'
+import { Route, Switch, useParams } from 'react-router-dom'
 import axios from 'axios'
 import './custom.scss'
 import { FrontPage } from './pages/FrontPage'
@@ -8,6 +8,8 @@ import { NurseryOwnersMain } from './pages/NurseryOwnersMain'
 import { SetHeight } from './components/SetHeight'
 import { BambooPlantsMain } from './pages/BambooPlantsMain'
 import { AddBamboo } from './pages/AddBamboo'
+import { NewNursery } from './pages/NewNursery'
+
 export function App() {
   return (
     <main>
@@ -24,7 +26,9 @@ export function App() {
         <Route path="/nursery-owners">
           <NurseryOwnersMain />
         </Route>
-        <Route path="/new-nursery"></Route>
+        <Route path="/new-nursery">
+          <NewNursery />
+        </Route>
         <Route path="/edit-nursery"></Route>
         <Route path="/add-bamboo">
           <AddBamboo />

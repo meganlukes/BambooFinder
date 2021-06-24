@@ -95,8 +95,8 @@ td {
 .descBox {
   border: 1px solid black;
   background-color: rgb(192, 196, 160, 0.6);
-  margin-bottom: 20px;
-  width: 70%;
+  margin-bottom: 40px;
+  width: 95%;
   max-width: 780px;
   height: 100px;
   margin-left: auto;
@@ -127,7 +127,7 @@ table {
 .mainpic {
   margin-left: 5px;
   margin-right: 5px;
-  width: 100%;
+  width: 80vw;
   max-width: 400px;
   border: 4px solid black;
 }
@@ -146,7 +146,7 @@ label {
   margin: 15px;
 }
 .bambooListItem img {
-  width: 100%;
+  width: 90vh;
   max-width: 300px;
 }
 .bambooList {
@@ -160,7 +160,14 @@ label {
 img {
   justify-content: center;
 }
-
+.bambooInfoList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 ul {
   display: flex;
   flex-direction: row;
@@ -174,10 +181,12 @@ ul {
   }
 }
 @media all and (min-width: 765px) {
-  .bambooList {
+  .bambooList,
+  .bambooInfoList {
     display: grid;
     grid-template-columns: 50% 50%;
     justify-content: center;
+    max-width: 795px;
   }
 }
 @media all and (min-width: 1013px) {

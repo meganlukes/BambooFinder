@@ -26,7 +26,7 @@ function Species() {
         <i>Blue chungii </i>
       </p>
       <p className="name">&quot;Angel Blue Mist Ghost Bamboo&quot;</p>
-      <ol className="bambooList">
+      <ol className="bambooInfoList">
         <li>
           <img
             className="mainpic"

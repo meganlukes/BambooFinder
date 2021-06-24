@@ -10,6 +10,7 @@ import { BambooPlantsMain } from './pages/BambooPlantsMain'
 import { AddBamboo } from './pages/AddBamboo'
 import { NewNursery } from './pages/NewNursery'
 import { NurserySuccess } from './pages/NurserySuccess'
+import { SpeciesSuccess } from './pages/SpeciesSuccess'
 
 export function App() {
   return (
@@ -37,7 +38,9 @@ export function App() {
         <Route path="/add-nursery-success">
           <NurserySuccess />
         </Route>
-        <Route></Route>
+        <Route path="/add-species-success">
+          <SpeciesSuccess />
+        </Route>
       </Switch>
       <ol className="bottom banner">
         <li className="horizontalspace">BambooFinder.com</li>

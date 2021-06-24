@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 export function NewNursery() {
   const [newNursery, setNewNursery] = useState({
@@ -14,7 +14,7 @@ export function NewNursery() {
     Description: '',
     Website: '',
   })
-
+  const history = useHistory()
   function handleStringFieldChange(event) {
     const value = event.target.value
     const fieldName = event.target.name
@@ -39,6 +39,7 @@ export function NewNursery() {
 
     if (response.ok) {
       console.log('Nursery successfully added')
+      history.push('/add-nursery-success')
     }
   }
 
@@ -99,14 +100,11 @@ export function NewNursery() {
 
           <div>Business Email Address</div>
           <input
-            type="email"
-            pattern=".+@globex\.com"
-            size="30"
+            type="text"
             placeholder="ex. name@business.com"
             name="Email"
             value={newNursery.Email}
             onChange={handleStringFieldChange}
-            required
           />
 
           <div>Street Address (optional)</div>

@@ -9,6 +9,7 @@ import { SetHeight } from './components/SetHeight'
 import { BambooPlantsMain } from './pages/BambooPlantsMain'
 import { AddBamboo } from './pages/AddBamboo'
 import { NewNursery } from './pages/NewNursery'
+import { NurserySuccess } from './pages/NurserySuccess'
 
 export function App() {
   return (
@@ -33,7 +34,9 @@ export function App() {
         <Route path="/add-bamboo">
           <AddBamboo />
         </Route>
-        <Route></Route>
+        <Route path="/add-nursery-success">
+          <NurserySuccess />
+        </Route>
         <Route></Route>
       </Switch>
       <ol className="bottom banner">

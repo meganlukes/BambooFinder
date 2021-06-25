@@ -188,7 +188,10 @@ export function BambooPlantsMain() {
               width="200"
             />
             <li>
-              <i>{plant.name}</i> {plant.commonName}
+              <Link to={`/species/${plant.id}`}>
+                <i>{plant.name}</i>
+              </Link>
+              {plant.commonName}
             </li>
             <li>
               Zone: {plant.minZone} - {plant.maxZone}

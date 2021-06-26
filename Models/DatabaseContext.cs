@@ -25,6 +25,11 @@ namespace BambooFinder.Models
             get; set;
         }
 
+        public DbSet<InventorySellers> InventorySellers
+        {
+            get; set;
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (LOG_SQL_STATEMENTS_IN_DEVELOPMENT && Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")

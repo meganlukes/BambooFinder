@@ -9,8 +9,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BambooFinder.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20210623162322_AddCommonNameToSpecies")]
-    partial class AddCommonNameToSpecies
+    [Migration("20210626201556_FirstMigration")]
+    partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -19,6 +19,28 @@ namespace BambooFinder.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.7")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+            modelBuilder.Entity("BambooFinder.Models.InventorySellers", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<int>("NurseryId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("SpeciesId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NurseryId");
+
+                    b.HasIndex("SpeciesId");
+
+                    b.ToTable("InventorySellers");
+                });
 
             modelBuilder.Entity("BambooFinder.Models.Nursery", b =>
                 {
@@ -37,6 +59,7 @@ namespace BambooFinder.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("PhoneNumber")
@@ -52,6 +75,7 @@ namespace BambooFinder.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Website")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Zipcode")
@@ -97,6 +121,7 @@ namespace BambooFinder.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -104,34 +129,33 @@ namespace BambooFinder.Migrations
                     b.ToTable("Species");
                 });
 
-            modelBuilder.Entity("NurserySpecies", b =>
+            modelBuilder.Entity("BambooFinder.Models.InventorySellers", b =>
                 {
-                    b.Property<int>("InventoryId")
-                        .HasColumnType("integer");
+                    b.HasOne("BambooFinder.Models.Nursery", "Nursery")
+                        .WithMany("InventorySellers")
+                        .HasForeignKey("NurseryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<int>("SellersId")
-                        .HasColumnType("integer");
+                    b.HasOne("BambooFinder.Models.Species", "Species")
+                        .WithMany("InventorySellers")
+                        .HasForeignKey("SpeciesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasKey("InventoryId", "SellersId");
+                    b.Navigation("Nursery");
 
-                    b.HasIndex("SellersId");
-
-                    b.ToTable("NurserySpecies");
+                    b.Navigation("Species");
                 });
 
-            modelBuilder.Entity("NurserySpecies", b =>
+            modelBuilder.Entity("BambooFinder.Models.Nursery", b =>
                 {
-                    b.HasOne("BambooFinder.Models.Species", null)
-                        .WithMany()
-                        .HasForeignKey("InventoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("InventorySellers");
+                });
 
-                    b.HasOne("BambooFinder.Models.Nursery", null)
-                        .WithMany()
-                        .HasForeignKey("SellersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+            modelBuilder.Entity("BambooFinder.Models.Species", b =>
+                {
+                    b.Navigation("InventorySellers");
                 });
 #pragma warning restore 612, 618
         }

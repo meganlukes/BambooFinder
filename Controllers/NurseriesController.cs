@@ -39,11 +39,13 @@ namespace BambooFinder.Controllers
 
             if (filter == null)
             {
-                return await _context.Nurseries.OrderBy(row => row.State).ToListAsync();
+                return await _context.Nurseries.OrderBy(row => row.State).Include(nursery => nursery.InventorySellers).ToListAsync();
             }
             else
             {
-                return await _context.Nurseries.Where(nursery => nursery.Name.ToLower().Contains(filter.ToLower())).ToListAsync();
+                return await _context.Nurseries.Where(nursery => nursery.Name.ToLower().Contains(filter.ToLower()) || nursery.State.ToLower().Contains(filter.ToLower())).
+                Include(nursery => nursery.InventorySellers).
+                ToListAsync();
             }
         }
 
@@ -57,7 +59,7 @@ namespace BambooFinder.Controllers
         public async Task<ActionResult<Nursery>> GetNurseries(int id)
         {
             // Find the nurseries in the database using `FindAsync` to look it up by id
-            var nurseries = await _context.Nurseries.FindAsync(id);
+            var nurseries = await _context.Nurseries.Include(nursery => nursery.InventorySellers).Where(nursery => nursery.Id == id).FirstOrDefaultAsync();
 
             // If we didn't find anything, we receive a `null` in return
             if (nurseries == null)

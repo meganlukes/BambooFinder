@@ -10,7 +10,7 @@ export function Species() {
   const [bamboo, setBamboo] = useState({
     name: '',
     info: 'N/A',
-    commonName: '',
+    commonName: 'bamboo',
     minHeight: 1,
     maxHeight: 150,
     clumping: true,
@@ -32,6 +32,20 @@ export function Species() {
     }
     fetchBamboo()
   }, [id])
+
+  useEffect(() => {
+    async function fetchBamboo() {
+      const response = await fetch(`/api/Species/${id}`)
+
+      if (response.ok) {
+        const apiData = await response.json()
+
+        setBamboo(apiData)
+      }
+    }
+    fetchBamboo()
+  }, [id])
+
   function lightString(light) {
     if (light === 1) {
       return 'Full Shade'
@@ -54,7 +68,10 @@ export function Species() {
       <p className="name">
         <i>{bamboo.name} </i>
       </p>
-      <p className="name">&quot;{bamboo.commonName}&quot;</p>
+      {/* {bamboo.commonName !== '' ? (
+        <p className="name">&quot;{bamboo.commonName}&quot;</p>
+      ) : null} */}
+
       <ol className="bambooInfoList">
         <li>
           <img
@@ -107,6 +124,7 @@ export function Species() {
         </li>
       </ol>
       <div className="descBox">{bamboo.info}</div>
+      {/* {bamboo.sellers > 0 ? (all the div below) : null} */}
       <div className="bambooinfolist">
         <table>
           <tr>

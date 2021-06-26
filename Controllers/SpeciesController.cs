@@ -37,7 +37,8 @@ namespace BambooFinder.Controllers
             // them by row id and return them as a JSON array.
             if (filter == null)
             {
-                return await _context.Species.ToListAsync();
+                return await _context.Species.OrderBy(row => row.Id).Include(Species => Species.InventorySellers).
+                ToListAsync();
             }
             else
             {
@@ -56,7 +57,7 @@ namespace BambooFinder.Controllers
         public async Task<ActionResult<Species>> GetSpecies(int id)
         {
             // Find the species in the database using `FindAsync` to look it up by id
-            var species = await _context.Species.FindAsync(id);
+            var species = await _context.Species.Include(species => species.InventorySellers).Where(species => species.Id == id).FirstOrDefaultAsync();
 
             // If we didn't find anything, we receive a `null` in return
             if (species == null)

@@ -9,7 +9,7 @@ export function Species() {
 
   const [bamboo, setBamboo] = useState({
     name: '',
-    info: '',
+    info: 'N/A',
     commonName: '',
     minHeight: 1,
     maxHeight: 150,
@@ -107,6 +107,25 @@ export function Species() {
         </li>
       </ol>
       <div className="descBox">{bamboo.info}</div>
+      <div className="bambooinfolist">
+        <table>
+          <tr>
+            <th>Nursery Name</th>
+            <th>Nursery Location</th>
+            <th>Ship</th>
+          </tr>
+          <tr>
+            <td>Bamboo Garden</td>
+            <td>Portland, OR</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>BambooPlantsOnline</td>
+            <td>Labelle, FL</td>
+            <td>Yes</td>
+          </tr>
+        </table>
+      </div>
     </>
   )
 }

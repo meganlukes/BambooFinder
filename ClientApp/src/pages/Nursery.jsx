@@ -73,6 +73,26 @@ export function Nursery() {
             <td>{nursery.shipping ? 'Yes' : 'No'}</td>
           </tr>
         </table>
+        <table>
+          <tr>
+            <th>Bamboo Carried</th>
+          </tr>
+          <tr>
+            <td>
+              <i>Phyllostachys nigra</i> "Black Bamboo"
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <i>Bambusa vulgaris</i> "Painted Bamboo"
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <i>Dendrocalamus minor Amoenus</i> "Angel Mist Ghost Bamboo"
+            </td>
+          </tr>
+        </table>
       </ol>
     </>
   )

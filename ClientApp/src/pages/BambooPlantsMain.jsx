@@ -6,9 +6,7 @@ import { SetGrowthHabit } from '../components/SetGrowthHabit'
 import { SetSize } from '../components/SetSize'
 
 import bluechungii from '../Images/bluechungii.jpg'
-import bluechungii2 from '../Images/bluechungii4.jpg'
 import runningclumping from '../Images/runningclumping.jpg'
-import usdazones from '../Images/usdazones.jpg'
 
 //http://www.bamboogarden.com/Smaller%20Running%20Bamboos.htm
 export function BambooPlantsMain() {
@@ -29,6 +27,18 @@ export function BambooPlantsMain() {
     }
     loadPlants()
   }, [filterText])
+
+  function lightString(light) {
+    if (light === 1) {
+      return 'Full Shade'
+    } else if (light === 2) {
+      return 'Part Shade'
+    } else if (light === 3) {
+      return 'Part Sun'
+    } else if (light === 4) {
+      return 'Full Sun'
+    }
+  }
 
   return (
     <div>
@@ -191,12 +201,21 @@ export function BambooPlantsMain() {
               <Link to={`/species/${plant.id}`}>
                 <i>{plant.name}</i>
               </Link>
-              {plant.commonName}
+            </li>
+            <li>{plant.commonName}</li>
+            <li>
+              Zone:{' '}
+              {plant.maxZone === plant.minZone
+                ? plant.maxZone
+                : `${plant.minZone} to ${plant.maxZone}`}
             </li>
             <li>
-              Zone: {plant.minZone} - {plant.maxZone}
+              {plant.maxLight === plant.minLight
+                ? lightString(plant.minLight)
+                : `${lightString(plant.minLight)} to ${lightString(
+                    plant.maxLight
+                  )}`}
             </li>
-            <li>Full Sun to Part Shade</li>
             <ul>
               <li>
                 Height: {plant.minHeight}ft-{plant.maxHeight}ft

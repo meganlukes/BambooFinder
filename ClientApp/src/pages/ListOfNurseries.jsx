@@ -47,7 +47,9 @@ export function ListOfNurseries() {
 
         {nurseries.map((nursery) => (
           <tr key={nursery.id}>
-            <td>{nursery.name}</td>
+            <td>
+              <Link to={`/Nursery/${nursery.id}`}>{nursery.name}</Link>
+            </td>
             <td>
               {nursery.city}, {nursery.state}
             </td>

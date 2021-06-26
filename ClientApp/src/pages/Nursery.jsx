@@ -73,6 +73,7 @@ export function Nursery() {
             <td>{nursery.shipping ? 'Yes' : 'No'}</td>
           </tr>
         </table>
+        <div className="descBox">{nursery.info}</div>
         <table>
           <tr>
             <th>Bamboo Carried</th>

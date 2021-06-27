@@ -18,6 +18,17 @@ export function Species() {
     maxLight: 4,
     minZone: 1,
     maxZone: 13,
+    inventorySellers: [
+      {
+        nurseryId: 3,
+        nursery: {
+          name: '',
+          city: '',
+          state: '',
+          shipping: true,
+        },
+      },
+    ],
   })
 
   useEffect(() => {
@@ -123,18 +134,23 @@ export function Species() {
               <th>Ship</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>Bamboo Garden</td>
-              <td>Portland, OR</td>
-              <td>Yes</td>
-            </tr>
-            <tr>
-              <td>BambooPlantsOnline</td>
-              <td>Labelle, FL</td>
-              <td>Yes</td>
-            </tr>
-          </tbody>
+          {bamboo.inventorySellers.map((inventorySellers) => (
+            <tbody>
+              <tr>
+                <td>{inventorySellers.nursery.name}</td>
+                <td>
+                  {inventorySellers.nursery.city},{' '}
+                  {inventorySellers.nursery.state}
+                </td>
+                <td>{inventorySellers.nursery.shipping} ? 'Yes' : 'No'</td>
+              </tr>
+              <tr>
+                <td>BambooPlantsOnline</td>
+                <td>Labelle, FL</td>
+                <td>Yes</td>
+              </tr>
+            </tbody>
+          ))}
         </table>
       </div>
     </>

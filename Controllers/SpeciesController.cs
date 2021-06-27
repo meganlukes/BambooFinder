@@ -59,6 +59,7 @@ namespace BambooFinder.Controllers
             // Find the species in the database using `FindAsync` to look it up by id
             var species = await _context.Species.
             Include(species => species.InventorySellers).
+            ThenInclude(inventorySellers => inventorySellers.Nursery).
             Where(species => species.Id == id).
             FirstOrDefaultAsync();
 

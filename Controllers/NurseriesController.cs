@@ -36,7 +36,7 @@ namespace BambooFinder.Controllers
             // Uses the database context in `_context` to request all of the Nurseries, sort
             // them by row id and return them as a JSON array.
             // return await _context.Nurseries.OrderBy(row => row.Id).ToListAsync();
-
+            // .ThenInclude(inventorySellers => inventorySellers.SpeciesId)
             if (filter == null)
             {
                 return await _context.Nurseries.OrderBy(row => row.State).Include(nursery => nursery.InventorySellers).ToListAsync();
@@ -59,7 +59,10 @@ namespace BambooFinder.Controllers
         public async Task<ActionResult<Nursery>> GetNurseries(int id)
         {
             // Find the nurseries in the database using `FindAsync` to look it up by id
-            var nurseries = await _context.Nurseries.Include(nursery => nursery.InventorySellers).Where(nursery => nursery.Id == id).FirstOrDefaultAsync();
+            var nurseries = await _context.Nurseries.
+            Include(nursery => nursery.InventorySellers).
+            Where(nursery => nursery.Id == id).
+            FirstOrDefaultAsync();
 
             // If we didn't find anything, we receive a `null` in return
             if (nurseries == null)

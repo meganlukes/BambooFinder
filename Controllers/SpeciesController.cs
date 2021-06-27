@@ -57,7 +57,10 @@ namespace BambooFinder.Controllers
         public async Task<ActionResult<Species>> GetSpecies(int id)
         {
             // Find the species in the database using `FindAsync` to look it up by id
-            var species = await _context.Species.Include(species => species.InventorySellers).Where(species => species.Id == id).FirstOrDefaultAsync();
+            var species = await _context.Species.
+            Include(species => species.InventorySellers).
+            Where(species => species.Id == id).
+            FirstOrDefaultAsync();
 
             // If we didn't find anything, we receive a `null` in return
             if (species == null)

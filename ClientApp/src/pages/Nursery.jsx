@@ -7,6 +7,7 @@ export function Nursery() {
   const id = params.id
 
   const [nursery, setNursery] = useState({
+    id: 4,
     name: '',
     shipping: true,
     phoneNumber: '',
@@ -17,6 +18,11 @@ export function Nursery() {
     zipcode: '',
     description: '',
     website: '',
+    inventorySellers: [
+      {
+        speciesId: 4,
+      },
+    ],
   })
 
   useEffect(() => {
@@ -55,6 +61,10 @@ export function Nursery() {
           <tr>
             <td>Email:</td>
             <td>{nursery.email} </td>
+          </tr>
+          <tr>
+            <td>{nursery.inventorySellers.speciesId}</td>
+            <td>{nursery.id}</td>
           </tr>
           <tr>
             <td>Address:</td>

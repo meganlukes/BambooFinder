@@ -33,19 +33,6 @@ export function Species() {
     fetchBamboo()
   }, [id])
 
-  useEffect(() => {
-    async function fetchBamboo() {
-      const response = await fetch(`/api/Species/${id}`)
-
-      if (response.ok) {
-        const apiData = await response.json()
-
-        setBamboo(apiData)
-      }
-    }
-    fetchBamboo()
-  }, [id])
-
   function lightString(light) {
     if (light === 1) {
       return 'Full Shade'
@@ -126,7 +113,7 @@ export function Species() {
       <div className="descBox">{bamboo.info}</div>
       {/* {bamboo.sellers > 0 ? (all the div below) : null} */}
       <div className="bambooinfolist">
-        <table>
+        <table className="bottomTable">
           <tr>
             <th>Nursery Name</th>
             <th>Nursery Location</th>

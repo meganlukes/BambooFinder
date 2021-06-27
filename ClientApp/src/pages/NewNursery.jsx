@@ -163,7 +163,7 @@ export function NewNursery() {
           <input
             type="text"
             className="inputBigBox"
-            placeholder="ex. Graceful Bamboo is an easy to care for species"
+            placeholder="Our family-owned nursery has been in operation for over 20 years. We carry more than 20 species and specialize in clumping bamboo. We are able to ship our plants anywhere in the lower 48 states, as well as provide specialty fertilizers and bamboo barriers."
             name="Description"
             value={newNursery.Description}
             onChange={handleStringFieldChange}

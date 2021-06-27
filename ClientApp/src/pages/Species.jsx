@@ -144,11 +144,6 @@ export function Species() {
                 </td>
                 <td>{inventorySellers.nursery.shipping} ? 'Yes' : 'No'</td>
               </tr>
-              <tr>
-                <td>BambooPlantsOnline</td>
-                <td>Labelle, FL</td>
-                <td>Yes</td>
-              </tr>
             </tbody>
           ))}
         </table>

@@ -18,7 +18,15 @@ export function Nursery() {
     zipcode: '',
     description: '',
     website: '',
-    inventorySellers: [],
+    inventorySellers: [
+      {
+        speciesId: 4,
+        species: {
+          name: '',
+          minHeight: 3,
+        },
+      },
+    ],
   })
 
   useEffect(() => {
@@ -33,6 +41,7 @@ export function Nursery() {
     }
     fetchNursery()
   }, [id])
+
   console.log(nursery.inventorySellers)
   return (
     <>
@@ -59,10 +68,7 @@ export function Nursery() {
               <td>Email:</td>
               <td>{nursery.email} </td>
             </tr>
-            <tr>
-              <td>{nursery.inventorySellers.speciesId}</td>
-              <td>{nursery.id}</td>
-            </tr>
+
             <tr>
               <td>Address:</td>
               <td>
@@ -82,28 +88,23 @@ export function Nursery() {
           </tbody>
         </table>
         <div className="descBox">{nursery.info}</div>
-        <table>
+        <table className="list">
           <thead>
             <tr>
               <th>Bamboo Carried</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <i>Phyllostachys nigra</i> "Black Bamboo"
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <i>Bambusa vulgaris</i> "Painted Bamboo"
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <i>Dendrocalamus minor Amoenus</i> "Angel Mist Ghost Bamboo"
-              </td>
-            </tr>
+            {nursery.inventorySellers.map((inventorySellers) => (
+              <tr key={inventorySellers.id}>
+                <td>
+                  <Link to={`/Species/${inventorySellers.speciesId}`}>
+                    <i>{inventorySellers.species.name}</i>{' '}
+                    {inventorySellers.species.commonName}
+                  </Link>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </ol>

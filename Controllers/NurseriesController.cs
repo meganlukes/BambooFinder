@@ -61,6 +61,7 @@ namespace BambooFinder.Controllers
             // Find the nurseries in the database using `FindAsync` to look it up by id
             var nurseries = await _context.Nurseries.
             Include(nursery => nursery.InventorySellers).
+            ThenInclude(inventorySellers => inventorySellers.Species).
             Where(nursery => nursery.Id == id).
             FirstOrDefaultAsync();
 

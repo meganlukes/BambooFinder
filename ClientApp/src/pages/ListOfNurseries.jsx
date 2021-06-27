@@ -39,23 +39,26 @@ export function ListOfNurseries() {
         />
       </form>
       <table>
-        <tr>
-          <th>Name</th>
-          <th>Location</th>
-          <th>Ship Out of State?</th>
-        </tr>
-
-        {nurseries.map((nursery) => (
-          <tr key={nursery.id}>
-            <td>
-              <Link to={`/Nursery/${nursery.id}`}>{nursery.name}</Link>
-            </td>
-            <td>
-              {nursery.city}, {nursery.state}
-            </td>
-            <td>{nursery.shipping ? 'Yes' : 'No'}</td>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Ship Out of State?</th>
           </tr>
-        ))}
+        </thead>
+        <tbody>
+          {nurseries.map((nursery) => (
+            <tr key={nursery.id}>
+              <td>
+                <Link to={`/Nursery/${nursery.id}`}>{nursery.name}</Link>
+              </td>
+              <td>
+                {nursery.city}, {nursery.state}
+              </td>
+              <td>{nursery.shipping ? 'Yes' : 'No'}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   )

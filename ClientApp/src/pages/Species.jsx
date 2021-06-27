@@ -69,44 +69,46 @@ export function Species() {
         </li>
         <li>
           <table>
-            <tr>
-              <td>Mature Height</td>
-              <td>
-                {bamboo.minHeight}ft - {bamboo.maxHeight}ft
-              </td>
-            </tr>
-            <tr>
-              <td>Growth Habit</td>
-              <td>{bamboo.clumping ? 'Clumping' : 'Running'}</td>
-            </tr>
-            <tr>
-              <td>
-                <ol>
-                  <li>Hardiness Zone</li>
-                  <li>
-                    <a href="https://planthardiness.ars.usda.gov/PHZMWeb/">
-                      Find your zone
-                    </a>
-                  </li>
-                </ol>
-              </td>
-              <td>
-                {' '}
-                {bamboo.maxZone === bamboo.minZone
-                  ? bamboo.maxZone
-                  : `${bamboo.minZone} to ${bamboo.maxZone}`}
-              </td>
-            </tr>
-            <tr>
-              <td>Light Requirements</td>
-              <td>
-                {bamboo.maxLight === bamboo.minLight
-                  ? lightString(bamboo.minLight)
-                  : `${lightString(bamboo.minLight)} to ${lightString(
-                      bamboo.maxLight
-                    )}`}
-              </td>
-            </tr>
+            <tbody>
+              <tr>
+                <td>Mature Height</td>
+                <td>
+                  {bamboo.minHeight}ft - {bamboo.maxHeight}ft
+                </td>
+              </tr>
+              <tr>
+                <td>Growth Habit</td>
+                <td>{bamboo.clumping ? 'Clumping' : 'Running'}</td>
+              </tr>
+              <tr>
+                <td>
+                  <ol>
+                    <li>Hardiness Zone</li>
+                    <li>
+                      <a href="https://planthardiness.ars.usda.gov/PHZMWeb/">
+                        Find your zone
+                      </a>
+                    </li>
+                  </ol>
+                </td>
+                <td>
+                  {' '}
+                  {bamboo.maxZone === bamboo.minZone
+                    ? bamboo.maxZone
+                    : `${bamboo.minZone} to ${bamboo.maxZone}`}
+                </td>
+              </tr>
+              <tr>
+                <td>Light Requirements</td>
+                <td>
+                  {bamboo.maxLight === bamboo.minLight
+                    ? lightString(bamboo.minLight)
+                    : `${lightString(bamboo.minLight)} to ${lightString(
+                        bamboo.maxLight
+                      )}`}
+                </td>
+              </tr>
+            </tbody>
           </table>
         </li>
       </ol>
@@ -114,21 +116,25 @@ export function Species() {
       {/* {bamboo.sellers > 0 ? (all the div below) : null} */}
       <div className="bambooinfolist">
         <table className="bottomTable">
-          <tr>
-            <th>Nursery Name</th>
-            <th>Nursery Location</th>
-            <th>Ship</th>
-          </tr>
-          <tr>
-            <td>Bamboo Garden</td>
-            <td>Portland, OR</td>
-            <td>Yes</td>
-          </tr>
-          <tr>
-            <td>BambooPlantsOnline</td>
-            <td>Labelle, FL</td>
-            <td>Yes</td>
-          </tr>
+          <thead>
+            <tr>
+              <th>Nursery Name</th>
+              <th>Nursery Location</th>
+              <th>Ship</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bamboo Garden</td>
+              <td>Portland, OR</td>
+              <td>Yes</td>
+            </tr>
+            <tr>
+              <td>BambooPlantsOnline</td>
+              <td>Labelle, FL</td>
+              <td>Yes</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </>

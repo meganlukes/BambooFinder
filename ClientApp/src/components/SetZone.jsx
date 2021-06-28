@@ -38,7 +38,11 @@ export function SetZone() {
   }
   return (
     <form>
-      <input type="number" onChange={updateTempZone} placeholder="ex. 9" />
+      <input
+        type="number"
+        onChange={updateTempZone}
+        placeholder="ex. 9 (required)"
+      />
       <button className="small" onClick={updateNewZone}>
         Set
       </button>

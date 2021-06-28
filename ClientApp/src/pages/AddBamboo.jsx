@@ -28,7 +28,7 @@ export function AddBamboo() {
     setNewBamboo({ ...newBamboo, [fieldName]: value })
   }
   function handleBoolFieldChange(event) {
-    const value = event.target.checked
+    const value = event.target.value
     const fieldName = event.target.name
 
     setNewBamboo({ ...newBamboo, [fieldName]: value })
@@ -85,7 +85,6 @@ export function AddBamboo() {
               name="Clumping"
               value={newBamboo.Clumping}
               onChange={handleBoolFieldChange}
-              checked
             />
             <label for="running">Running</label>
           </div>
@@ -96,7 +95,6 @@ export function AddBamboo() {
               name="Clumping"
               value={newBamboo.Clumping}
               onChange={handleBoolFieldChange}
-              checked
             />
             <label for="clumping">Clumping</label>
           </div>

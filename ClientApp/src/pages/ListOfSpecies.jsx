@@ -13,12 +13,21 @@ export function BambooPlantsMain() {
   const [filterText, setFilterText] = useState('')
   const [plants, setPlants] = useState([])
 
-  const siftMinLight = 1
-  const siftMaxLight = 2
-  const siftZone = 9
-  const siftMinHeight = 1
-  const siftMaxHeight = 150
+  const siftLight = null
+  const siftZone = null
   const siftGrowthHabit = true
+
+  function sift(minLight, maxLight, minZone, maxZone, clumping) {
+    if (minLight <= siftLight && siftLight <= maxLight) {
+      if (minZone <= siftZone && siftZone <= maxZone) {
+        if (siftGrowthHabit === clumping) {
+          return true
+        }
+      }
+    } else {
+      return false
+    }
+  }
 
   useEffect(() => {
     async function loadPlants() {
@@ -29,6 +38,7 @@ export function BambooPlantsMain() {
       const response = await fetch(url)
       if (response.status === 200) {
         const json = await response.json()
+        console.log(json)
         setPlants(json)
       }
     }
@@ -69,7 +79,16 @@ export function BambooPlantsMain() {
       </form>
 
       <p className="para">
-        <SetZone />
+        <label>USDA Plant Hardiness Zone</label>
+        <form>
+          <input
+            type="number"
+            placeholder="ex. 9 (required)"
+            name="siftZone"
+            value={siftZone}
+          />
+          <button className="small">Set</button>
+        </form>
         Click <a href="https://planthardiness.ars.usda.gov/PHZMWeb/">here</a> to
         find your USDA zone
         <details>
@@ -127,16 +146,6 @@ export function BambooPlantsMain() {
               />
               <label for="clumping">Clumping</label>
             </div>
-            <div>
-              <input
-                type="radio"
-                id="either"
-                name="growthhabit"
-                value="either"
-                checked
-              />
-              <label for="either">No Preference</label>
-            </div>
           </li>
           <li>
             <label>Sun Requirements</label>
@@ -160,7 +169,6 @@ export function BambooPlantsMain() {
               />
               <label for="partshade">Part Shade</label>
             </div>
-            <div>{siftMinHeight}</div>
             <div>
               <input
                 type="radio"
@@ -181,62 +189,60 @@ export function BambooPlantsMain() {
               />
               <label for="fullsun">Full Sun</label>
             </div>
-            <div>
-              <input
-                type="radio"
-                id="either"
-                name="sunlight"
-                value="either"
-                checked
-              />
-              <label for="either">No Preference</label>
-            </div>
           </li>
         </ul>
       </div>
 
-      <label>Adult Height</label>
-      <SetSize />
       <ol className="bambooList">
         {plants.map((plant) => (
-          <ol className="bambooListItem" key={plant}>
-            <img
-              src={bluechungii}
-              alt="Woman standing next to bamboo"
-              width="200"
-            />
-            {/* Scientific name */}
-            <li>
-              <Link to={`/species/${plant.id}`}>
-                <i>{plant.name}</i>
-              </Link>
-            </li>
-            {/* Common name */}
-            <li>{plant.commonName}</li>
-            {/* plant zone */}
-            <li>
-              Zone:{' '}
-              {plant.maxZone === plant.minZone
-                ? plant.maxZone
-                : `${plant.minZone} to ${plant.maxZone}`}
-            </li>
-            {/* light */}
-            <li>
-              {plant.maxLight === plant.minLight
-                ? lightString(plant.minLight)
-                : `${lightString(plant.minLight)} to ${lightString(
-                    plant.maxLight
-                  )}`}
-            </li>
-            <ul>
-              {/* height */}
-              <li>
-                Height: {plant.minHeight}ft-{plant.maxHeight}ft
-              </li>
-              {/* clumping */}
-              <li>{plant.clumping ? 'Clumping' : 'Running'}</li>
-            </ul>
-          </ol>
+          <li key={plant.id}>
+            {sift(
+              plant.minLight,
+              plant.maxLight,
+              plant.minZone,
+              plant.maxZone,
+              plant.clumping
+            ) ? (
+              <ol className="bambooListItem">
+                <img
+                  src={bluechungii}
+                  alt="Woman standing next to bamboo"
+                  width="200"
+                />
+                {/* Scientific name */}
+                <li>
+                  <Link to={`/species/${plant.id}`}>
+                    <i>{plant.name}</i>
+                  </Link>
+                </li>
+                {/* Common name */}
+                <li>{plant.commonName}</li>
+                {/* plant zone */}
+                <li>
+                  Zone:{' '}
+                  {plant.maxZone === plant.minZone
+                    ? plant.maxZone
+                    : `${plant.minZone} to ${plant.maxZone}`}
+                </li>
+                {/* light */}
+                <li>
+                  {plant.maxLight === plant.minLight
+                    ? lightString(plant.minLight)
+                    : `${lightString(plant.minLight)} to ${lightString(
+                        plant.maxLight
+                      )}`}
+                </li>
+                <ul>
+                  {/* height */}
+                  <li>
+                    Height: {plant.minHeight}ft-{plant.maxHeight}ft
+                  </li>
+                  {/* clumping */}
+                  <li>{plant.clumping ? 'Clumping' : 'Running'}</li>
+                </ul>
+              </ol>
+            ) : null}
+          </li>
         ))}
       </ol>
     </div>

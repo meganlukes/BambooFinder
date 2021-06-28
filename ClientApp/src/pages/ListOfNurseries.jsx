@@ -1,5 +1,5 @@
 import React, { useState, Component, useEffect } from 'react'
-import { BambooPlantsMain } from './BambooPlantsMain'
+import { BambooPlantsMain } from './ListOfSpecies'
 import { Link, Route, Switch, useParams } from 'react-router-dom'
 export function ListOfNurseries() {
   const [filterText, setFilterText] = useState('')

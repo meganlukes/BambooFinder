@@ -13,6 +13,13 @@ export function BambooPlantsMain() {
   const [filterText, setFilterText] = useState('')
   const [plants, setPlants] = useState([])
 
+  const siftMinLight = 1
+  const siftMaxLight = 2
+  const siftZone = 9
+  const siftMinHeight = 1
+  const siftMaxHeight = 150
+  const siftGrowthHabit = true
+
   useEffect(() => {
     async function loadPlants() {
       const url =
@@ -153,6 +160,7 @@ export function BambooPlantsMain() {
               />
               <label for="partshade">Part Shade</label>
             </div>
+            <div>{siftMinHeight}</div>
             <div>
               <input
                 type="radio"
@@ -197,18 +205,22 @@ export function BambooPlantsMain() {
               alt="Woman standing next to bamboo"
               width="200"
             />
+            {/* Scientific name */}
             <li>
               <Link to={`/species/${plant.id}`}>
                 <i>{plant.name}</i>
               </Link>
             </li>
+            {/* Common name */}
             <li>{plant.commonName}</li>
+            {/* plant zone */}
             <li>
               Zone:{' '}
               {plant.maxZone === plant.minZone
                 ? plant.maxZone
                 : `${plant.minZone} to ${plant.maxZone}`}
             </li>
+            {/* light */}
             <li>
               {plant.maxLight === plant.minLight
                 ? lightString(plant.minLight)
@@ -217,9 +229,11 @@ export function BambooPlantsMain() {
                   )}`}
             </li>
             <ul>
+              {/* height */}
               <li>
                 Height: {plant.minHeight}ft-{plant.maxHeight}ft
               </li>
+              {/* clumping */}
               <li>{plant.clumping ? 'Clumping' : 'Running'}</li>
             </ul>
           </ol>

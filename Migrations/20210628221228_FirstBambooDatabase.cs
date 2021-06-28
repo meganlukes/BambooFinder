@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace BambooFinder.Migrations
 {
-    public partial class FirstMigration : Migration
+    public partial class FirstBambooDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

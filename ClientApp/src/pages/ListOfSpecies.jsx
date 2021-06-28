@@ -12,21 +12,36 @@ import runningclumping from '../Images/runningclumping.jpg'
 export function BambooPlantsMain() {
   const [filterText, setFilterText] = useState('')
   const [plants, setPlants] = useState([])
-
-  const siftLight = null
-  const siftZone = null
-  const siftGrowthHabit = true
+  const [sifters, setSifters] = useState({
+    siftLight: 3,
+    siftZone: 9,
+    siftGrowthHabit: false,
+  })
 
   function sift(minLight, maxLight, minZone, maxZone, clumping) {
-    if (minLight <= siftLight && siftLight <= maxLight) {
-      if (minZone <= siftZone && siftZone <= maxZone) {
-        if (siftGrowthHabit === clumping) {
+    if (minLight <= sifters.siftLight && sifters.siftLight <= maxLight) {
+      if (minZone <= sifters.siftZone && sifters.siftZone <= maxZone) {
+        if (sifters.siftGrowthHabit === clumping) {
           return true
         }
       }
     } else {
       return false
     }
+  }
+  function handleBoolFieldChange(event) {
+    const value = event.target.value
+    const fieldName = event.target.name
+    console.log(value)
+
+    setSifters({ ...sifters, [fieldName]: value })
+  }
+
+  function handleIntFieldChange(event) {
+    const value = Number(event.target.value)
+    const fieldName = event.target.name
+
+    setSifters({ ...sifters, [fieldName]: value })
   }
 
   useEffect(() => {
@@ -43,7 +58,7 @@ export function BambooPlantsMain() {
       }
     }
     loadPlants()
-  }, [filterText])
+  }, [filterText, sifters])
 
   function lightString(light) {
     if (light === 1) {
@@ -85,9 +100,9 @@ export function BambooPlantsMain() {
             type="number"
             placeholder="ex. 9 (required)"
             name="siftZone"
-            value={siftZone}
+            value={sifters.siftZone}
+            onChange={handleIntFieldChange}
           />
-          <button className="small">Set</button>
         </form>
         Click <a href="https://planthardiness.ars.usda.gov/PHZMWeb/">here</a> to
         find your USDA zone
@@ -129,20 +144,20 @@ export function BambooPlantsMain() {
             <div>
               <input
                 type="radio"
-                id="running"
-                name="growthhabit"
-                value="running"
-                checked
+                id="false"
+                name="siftGrowthHabit"
+                value={false}
+                onChange={handleBoolFieldChange}
               />
               <label for="running">Running</label>
             </div>
             <div>
               <input
                 type="radio"
-                id="clumping"
-                name="growthhabit"
-                value="clumping"
-                checked
+                id="true"
+                name="siftGrowthHabit"
+                value={true}
+                onChange={handleBoolFieldChange}
               />
               <label for="clumping">Clumping</label>
             </div>
@@ -153,9 +168,9 @@ export function BambooPlantsMain() {
               <input
                 type="radio"
                 id="shade"
-                name="sunlight"
-                value="shade"
-                checked
+                name="siftLight"
+                value={1}
+                onChange={handleIntFieldChange}
               />
               <label for="shade">Shade</label>
             </div>
@@ -163,9 +178,9 @@ export function BambooPlantsMain() {
               <input
                 type="radio"
                 id="partshade"
-                name="sunlight"
-                value="partshade"
-                checked
+                name="siftLight"
+                value={2}
+                onChange={handleIntFieldChange}
               />
               <label for="partshade">Part Shade</label>
             </div>
@@ -173,9 +188,9 @@ export function BambooPlantsMain() {
               <input
                 type="radio"
                 id="partsun"
-                name="sunlight"
-                value="partsun"
-                checked
+                name="siftLight"
+                value={3}
+                onChange={handleIntFieldChange}
               />
               <label for="partsun">Part Sun</label>
             </div>
@@ -183,9 +198,9 @@ export function BambooPlantsMain() {
               <input
                 type="radio"
                 id="fullsun"
-                name="sunlight"
-                value="fullsun"
-                checked
+                name="siftLight"
+                value={4}
+                onChange={handleIntFieldChange}
               />
               <label for="fullsun">Full Sun</label>
             </div>

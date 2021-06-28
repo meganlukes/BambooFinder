@@ -30,6 +30,7 @@ export function AddBamboo() {
   function handleBoolFieldChange(event) {
     const value = event.target.value
     const fieldName = event.target.name
+    console.log(value)
 
     setNewBamboo({ ...newBamboo, [fieldName]: value })
   }
@@ -83,7 +84,7 @@ export function AddBamboo() {
               type="radio"
               id="false"
               name="Clumping"
-              value={newBamboo.Clumping}
+              value={false}
               onChange={handleBoolFieldChange}
             />
             <label for="running">Running</label>
@@ -93,7 +94,7 @@ export function AddBamboo() {
               type="radio"
               id="true"
               name="Clumping"
-              value={newBamboo.Clumping}
+              value={true}
               onChange={handleBoolFieldChange}
             />
             <label for="clumping">Clumping</label>

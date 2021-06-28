@@ -9,8 +9,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace BambooFinder.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20210626201556_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20210628221228_FirstBambooDatabase")]
+    partial class FirstBambooDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -29,8 +29,9 @@ export function BambooPlantsMain() {
       return false
     }
   }
+
   function handleBoolFieldChange(event) {
-    const value = event.target.value
+    const value = event.target.value === 'true'
     const fieldName = event.target.name
     console.log(value)
 
@@ -147,6 +148,7 @@ export function BambooPlantsMain() {
                 id="running"
                 name="siftClumping"
                 value={false}
+                checked={!sifters.siftClumping}
                 onChange={handleBoolFieldChange}
               />
               <label for="running">Running</label>
@@ -157,6 +159,7 @@ export function BambooPlantsMain() {
                 id="clumping"
                 name="siftClumping"
                 value={true}
+                checked={sifters.siftClumping}
                 onChange={handleBoolFieldChange}
               />
               <label for="clumping">Clumping</label>

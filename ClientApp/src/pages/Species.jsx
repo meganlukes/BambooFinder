@@ -65,10 +65,8 @@ export function Species() {
       </header>
       <p className="name">
         <i>{bamboo.name} </i>
+        <q>{bamboo.commonName}</q>
       </p>
-      {/* {bamboo.commonName !== '' ? (
-        <p className="name">&quot;{bamboo.commonName}&quot;</p>
-      ) : null} */}
 
       <ol className="bambooInfoList">
         <li>

@@ -8,9 +8,7 @@ namespace BambooFinder.Models
     {
         public int Id { get; set; }
 
-        [Required]
-        public string FullName { get; set; }
-        public string PrefName { get; set; }
+
         [Required]
         public string NurseryName { get; set; }
         [Required]

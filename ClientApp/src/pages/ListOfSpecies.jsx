@@ -234,7 +234,9 @@ export function BambooPlantsMain() {
                   </Link>
                 </li>
                 {/* Common name */}
-                <li>{plant.commonName}</li>
+                <li>
+                  <q>{plant.commonName}</q>
+                </li>
                 {/* plant zone */}
                 <li>
                   Zone:{' '}

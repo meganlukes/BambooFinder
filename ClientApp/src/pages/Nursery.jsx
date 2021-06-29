@@ -100,7 +100,7 @@ export function Nursery() {
                 <td>
                   <Link to={`/Species/${inventorySellers.speciesId}`}>
                     <i>{inventorySellers.species.name}</i>{' '}
-                    {inventorySellers.species.commonName}
+                    <q>{inventorySellers.species.commonName}</q>
                   </Link>
                 </td>
               </tr>

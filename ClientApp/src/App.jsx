@@ -1,5 +1,5 @@
-import React, { useState, Component } from 'react'
-import { Route, Switch, Link, useHistory } from 'react-router-dom'
+import React, { Component } from 'react'
+import { Route, Switch, useHistory } from 'react-router-dom'
 import axios from 'axios'
 
 import './custom.scss'
@@ -14,19 +14,7 @@ import { NurserySuccess } from './pages/NurserySuccess'
 import { SpeciesSuccess } from './pages/SpeciesSuccess'
 import { Species } from './pages/Species'
 import { Nursery } from './pages/Nursery'
-
-function AddInventory() {
-  return (
-    <>
-      <header>
-        <h2>
-          <Link to="/">BambooFinder.com</Link>
-        </h2>
-        <h4>Add Bamboo to Your Inventory</h4>
-      </header>
-    </>
-  )
-}
+import { AddInventory } from './pages/AddInventory'
 
 export function App() {
   return (

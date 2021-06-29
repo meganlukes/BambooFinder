@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Route, Switch, useParams } from 'react-router-dom'
+import React, { Component, useState } from 'react'
+import { Link, useHistory, Route, Switch, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 import './custom.scss'
@@ -11,11 +11,23 @@ import { BambooPlantsMain } from './pages/ListOfSpecies'
 import { AddBamboo } from './pages/AddBamboo'
 import { NewNursery } from './pages/NewNursery'
 import { NurserySuccess } from './pages/NurserySuccess'
-
 import { Species } from './pages/Species'
 import { Nursery } from './pages/Nursery'
 import { AddInventory } from './pages/AddInventory'
 import { DeleteNursery } from './pages/DeleteNursery'
+
+function NewOwner() {
+  return (
+    <>
+      <header>
+        <h2>
+          <Link to="/">BambooFinder.com</Link>
+        </h2>
+        <h4>Create your </h4>
+      </header>
+    </>
+  )
+}
 
 export function App() {
   return (
@@ -54,6 +66,9 @@ export function App() {
         </Route>
         <Route exact path="/delete-nursery">
           <DeleteNursery />
+        </Route>
+        <Route exact path="/new-owner">
+          <NewOwner />
         </Route>
       </Switch>
 

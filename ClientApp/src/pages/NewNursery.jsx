@@ -14,6 +14,11 @@ export function NewNursery() {
     Description: '',
     Website: '',
   })
+  const [newUser, setNewUser] = useState({
+    NurseryName: '',
+    Email: '',
+    Password: '',
+  })
   const history = useHistory()
   function handleStringFieldChange(event) {
     const value = event.target.value
@@ -31,6 +36,15 @@ export function NewNursery() {
   async function handleFormSubmit(event) {
     event.preventDefault()
 
+    const response2 = await fetch('/api/Users', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(newUser),
+    })
+
+    if (response2.ok) {
+      console.log('NurseryUser Successfully added')
+    }
     const response = await fetch('/api/Nurseries', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -53,6 +67,31 @@ export function NewNursery() {
       </header>
       <div className="addForm">
         <form onSubmit={handleFormSubmit}>
+          <div>Username</div>
+          <input
+            type="text"
+            className="inputLittleBox"
+            placeholder="ex."
+            name="NurseryName"
+            value={newUser.NurseryName}
+            onChange={handleStringFieldChange}
+          />
+          <div>Login Email Address</div>
+          <input
+            type="text"
+            placeholder="ex. name@business.com"
+            name="Email"
+            value={newUser.Email}
+            onChange={handleStringFieldChange}
+          />
+          <div>Password</div>
+          <input
+            type="text"
+            placeholder=""
+            name="Email"
+            value={newUser.Email}
+            onChange={handleStringFieldChange}
+          />
           <div>Nursery Name</div>
           <input
             type="text"
@@ -98,7 +137,7 @@ export function NewNursery() {
             required
           />
 
-          <div>Business Email Address</div>
+          <div>Customer Inquiry Email Address</div>
           <input
             type="text"
             placeholder="ex. name@business.com"

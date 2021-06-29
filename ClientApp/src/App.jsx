@@ -11,7 +11,7 @@ import { BambooPlantsMain } from './pages/ListOfSpecies'
 import { AddBamboo } from './pages/AddBamboo'
 import { NewNursery } from './pages/NewNursery'
 import { NurserySuccess } from './pages/NurserySuccess'
-import { SpeciesSuccess } from './pages/SpeciesSuccess'
+
 import { Species } from './pages/Species'
 import { Nursery } from './pages/Nursery'
 import { AddInventory } from './pages/AddInventory'

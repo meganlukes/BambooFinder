@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 export function AddInventory() {
-  // const [inventory, setInventory] = useState({
-  //   speciesId: null,
-  //   nurseryId: null,
-  // })
+  const [newInventorySellers, setNewInventorySellers] = useState({
+    speciesId: null,
+    nurseryId: null,
+  })
+  const history = useHistory()
   const [plants, setPlants] = useState([])
   const [nurseries, setNurseries] = useState([])
 
@@ -31,6 +32,27 @@ export function AddInventory() {
     loadNurseries()
     loadPlants()
   })
+  function handleIntFieldChange(event) {
+    const value = Number(event.target.value)
+    const fieldName = event.target.name
+
+    setNewInventorySellers({ ...newInventorySellers, [fieldName]: value })
+  }
+
+  async function handleFormSubmit(event) {
+    event.preventDefault()
+
+    const response = await fetch('/api/InventorySellers', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(newInventorySellers),
+    })
+
+    if (response.ok) {
+      console.log('newInventorysellers successfully added')
+      history.push('/success')
+    }
+  }
 
   return (
     <>
@@ -40,19 +62,40 @@ export function AddInventory() {
         </h2>
         <h4>Add Bamboo to Your Inventory</h4>
       </header>
-      <div>
-        {plants.map((plant) => (
-          <ul key={plant.id}>
-            <li>{plant.name}</li>
-          </ul>
-        ))}
-      </div>
-      <div>
-        {nurseries.map((nursery) => (
-          <ul key={nursery.id}>
-            <li>{nursery.name}</li>
-          </ul>
-        ))}
+      <div className="addForm">
+        <form onSubmit={handleFormSubmit}>
+          <div>Nursery</div>
+          <div>
+            {nurseries.map((nursery) => (
+              <div key={nursery.id}>
+                <input
+                  type="radio"
+                  id="nurseryname"
+                  name="nurseryId"
+                  value={nursery.id}
+                  onChange={handleIntFieldChange}
+                />
+                <label for="nurseryname">{nursery.name}</label>
+              </div>
+            ))}
+          </div>
+          <div>Bamboo Species</div>
+          <div>
+            {plants.map((plant) => (
+              <div key={plant.id}>
+                <input
+                  type="radio"
+                  id="plantname"
+                  name="speciesId"
+                  value={plant.id}
+                  onChange={handleIntFieldChange}
+                />
+                <label for="plantname">{plant.name}</label>
+              </div>
+            ))}
+          </div>
+          <input type="submit" value="submit" />
+        </form>
       </div>
     </>
   )

@@ -15,13 +15,13 @@ export function BambooPlantsMain() {
   const [sifters, setSifters] = useState({
     siftLight: 3,
     siftZone: 9,
-    siftGrowthHabit: false,
+    siftClumping: true,
   })
 
   function sift(minLight, maxLight, minZone, maxZone, clumping) {
     if (minLight <= sifters.siftLight && sifters.siftLight <= maxLight) {
       if (minZone <= sifters.siftZone && sifters.siftZone <= maxZone) {
-        if (sifters.siftGrowthHabit === clumping) {
+        if (sifters.siftClumping === clumping) {
           return true
         }
       }
@@ -144,8 +144,8 @@ export function BambooPlantsMain() {
             <div>
               <input
                 type="radio"
-                id="false"
-                name="siftGrowthHabit"
+                id="running"
+                name="siftClumping"
                 value={false}
                 onChange={handleBoolFieldChange}
               />
@@ -154,8 +154,8 @@ export function BambooPlantsMain() {
             <div>
               <input
                 type="radio"
-                id="true"
-                name="siftGrowthHabit"
+                id="clumping"
+                name="siftClumping"
                 value={true}
                 onChange={handleBoolFieldChange}
               />

@@ -8,7 +8,7 @@ export function NurserySuccess() {
         <h2>
           <Link to="/">BambooFinder.com</Link>
         </h2>
-        <h3>Nursery Successfully Added!</h3>
+        <h3>Successfully Added!</h3>
       </header>
       <button className="big">
         {' '}

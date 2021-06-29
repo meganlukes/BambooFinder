@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import React, { useState, Component } from 'react'
+import { Route, Switch, Link, useHistory } from 'react-router-dom'
 import axios from 'axios'
-import { useHistory } from 'react-router-dom'
+
 import './custom.scss'
 import { FrontPage } from './pages/FrontPage'
 import { ListOfNurseries } from './pages/ListOfNurseries'
@@ -14,6 +14,19 @@ import { NurserySuccess } from './pages/NurserySuccess'
 import { SpeciesSuccess } from './pages/SpeciesSuccess'
 import { Species } from './pages/Species'
 import { Nursery } from './pages/Nursery'
+
+function AddInventory() {
+  return (
+    <>
+      <header>
+        <h2>
+          <Link to="/">BambooFinder.com</Link>
+        </h2>
+        <h4>Add Bamboo to Your Inventory</h4>
+      </header>
+    </>
+  )
+}
 
 export function App() {
   return (
@@ -38,11 +51,11 @@ export function App() {
         <Route exact path="/add-bamboo">
           <AddBamboo />
         </Route>
-        <Route exact path="/add-nursery-success">
+        <Route exact path="/success">
           <NurserySuccess />
         </Route>
-        <Route exact path="/add-species-success">
-          <SpeciesSuccess />
+        <Route exact path="/add-inventory">
+          <AddInventory />
         </Route>
         <Route exact path="/species/:id">
           <Species />

@@ -137,12 +137,16 @@ export function Species() {
           {bamboo.inventorySellers.map((inventorySellers) => (
             <tbody>
               <tr>
-                <td>{inventorySellers.nursery.name}</td>
+                <td>
+                  <Link to={`/Nursery/${inventorySellers.nurseryId}`}>
+                    {inventorySellers.nursery.name}
+                  </Link>
+                </td>
                 <td>
                   {inventorySellers.nursery.city},{' '}
                   {inventorySellers.nursery.state}
                 </td>
-                <td>{inventorySellers.nursery.shipping} ? 'Yes' : 'No'</td>
+                <td>{inventorySellers.nursery.shipping ? 'Yes' : 'No'}</td>
               </tr>
             </tbody>
           ))}

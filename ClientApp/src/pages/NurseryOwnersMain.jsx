@@ -21,6 +21,10 @@ export function NurseryOwnersMain() {
       <button className="big">
         <Link to="/add-bamboo">Add a Bamboo Species to Our Database</Link>
       </button>
+      <button className="big">
+        {' '}
+        <Link to="/add-inventory">Add Bamboo Species to Your Inventory</Link>
+      </button>
     </div>
   )
 }

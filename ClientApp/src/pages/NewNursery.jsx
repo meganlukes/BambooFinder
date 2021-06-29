@@ -39,7 +39,7 @@ export function NewNursery() {
 
     if (response.ok) {
       console.log('Nursery successfully added')
-      history.push('/add-nursery-success')
+      history.push('/success')
     }
   }
 

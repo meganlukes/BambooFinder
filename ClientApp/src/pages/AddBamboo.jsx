@@ -45,7 +45,7 @@ export function AddBamboo() {
 
     if (response.ok) {
       console.log('Bamboo successfully added')
-      history.push('/add-bamboo-success')
+      history.push('/success')
     }
   }
 

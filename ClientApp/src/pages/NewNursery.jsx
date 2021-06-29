@@ -23,6 +23,7 @@ export function NewNursery() {
   function handleStringFieldChange(event) {
     const value = event.target.value
     const fieldName = event.target.name
+    setNewUser({ ...newUser, [fieldName]: value })
 
     setNewNursery({ ...newNursery, [fieldName]: value })
   }
@@ -71,7 +72,7 @@ export function NewNursery() {
           <input
             type="text"
             className="inputLittleBox"
-            placeholder="ex."
+            placeholder=""
             name="NurseryName"
             value={newUser.NurseryName}
             onChange={handleStringFieldChange}
@@ -96,7 +97,7 @@ export function NewNursery() {
           <input
             type="text"
             className="inputLittleBox"
-            placeholder="ex. My Nursery"
+            placeholder="ex. Shady Hills Nursery"
             name="Name"
             value={newNursery.Name}
             onChange={handleStringFieldChange}

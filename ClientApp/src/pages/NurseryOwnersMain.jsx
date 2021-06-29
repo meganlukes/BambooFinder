@@ -17,7 +17,9 @@ export function NurseryOwnersMain() {
         {' '}
         <Link to="/new-nursery">Add Your Nursery to BambooFinder.com</Link>
       </button>
-      <button className="big">Edit or Delete Your Nursery</button>
+      <button className="big">
+        <Link to="/delete-nursery">Delete Nursery</Link>
+      </button>
       <button className="big">
         <Link to="/add-bamboo">Add a Bamboo Species to Our Database</Link>
       </button>

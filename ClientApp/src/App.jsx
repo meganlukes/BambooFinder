@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Switch, useHistory } from 'react-router-dom'
+import { Route, Switch, useParams } from 'react-router-dom'
 import axios from 'axios'
 
 import './custom.scss'
@@ -15,6 +15,7 @@ import { NurserySuccess } from './pages/NurserySuccess'
 import { Species } from './pages/Species'
 import { Nursery } from './pages/Nursery'
 import { AddInventory } from './pages/AddInventory'
+import { DeleteNursery } from './pages/DeleteNursery'
 
 export function App() {
   return (
@@ -50,6 +51,9 @@ export function App() {
         </Route>
         <Route exact path="/nursery/:id">
           <Nursery />
+        </Route>
+        <Route exact path="/delete-nursery">
+          <DeleteNursery />
         </Route>
       </Switch>
 

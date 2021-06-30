@@ -15,13 +15,16 @@ export function AddBamboo() {
     MaxLight: 4,
     MinZone: 1,
     MaxZone: 13,
+    PhotoURL: '',
   })
   const history = useHistory()
   const [errorMessage, setErrorMessage] = useState('')
   const [isUploading, setIsUploading] = useState(false)
+
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop: onDropFile,
   })
+
   function handleStringFieldChange(event) {
     const value = event.target.value
     const fieldName = event.target.name
@@ -46,7 +49,7 @@ export function AddBamboo() {
 
     const response = await fetch('/api/Species', {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
+      headers: { 'content-type': 'application/json', ...authHeader() },
       body: JSON.stringify(newBamboo),
     })
 
@@ -55,10 +58,10 @@ export function AddBamboo() {
       history.push('/success')
     }
   }
+
   async function onDropFile(acceptedFiles) {
     // Do something with the files
     const fileToUpload = acceptedFiles[0]
-    console.log(fileToUpload)
 
     setIsUploading(true)
 
@@ -89,7 +92,7 @@ export function AddBamboo() {
 
         const url = apiResponse.url
 
-        setNewBamboo({ ...newBamboo, photoURL: url })
+        setNewBamboo({ ...newBamboo, PhotoURL: url })
       } else {
         setErrorMessage('Unable to upload image')
       }
@@ -99,6 +102,16 @@ export function AddBamboo() {
     }
     setIsUploading(false)
   }
+  let dropZoneMessage = 'Drag a picture of the restaurant here to upload!'
+
+  if (isUploading) {
+    dropZoneMessage = 'Uploading...'
+  }
+
+  if (isDragActive) {
+    dropZoneMessage = 'Drop the files here ...'
+  }
+
   return (
     <>
       <header>
@@ -137,7 +150,7 @@ export function AddBamboo() {
               value={false}
               onChange={handleBoolFieldChange}
             />
-            <label for="running">Running</label>
+            <label htmlFor="running">Running</label>
           </div>
           <div>
             <input
@@ -147,7 +160,7 @@ export function AddBamboo() {
               value={true}
               onChange={handleBoolFieldChange}
             />
-            <label for="clumping">Clumping</label>
+            <label htmlFor="clumping">Clumping</label>
           </div>
           <div>Growing Zone</div>
           <label>
@@ -235,12 +248,19 @@ export function AddBamboo() {
             onChange={handleStringFieldChange}
           />
           <div>Photo</div>
+          {newBamboo.PhotoURL ? (
+            <p>
+              <img
+                alt="Bamboo Upload Preview"
+                width={200}
+                src={newBamboo.PhotoURL}
+              />
+            </p>
+          ) : null}
           <div className="file-drop-zone">
             <div {...getRootProps()}>
               <input {...getInputProps()} />
-              {isDragActive
-                ? 'Drop the files here ...'
-                : 'Drag a picture of the bamboo here to upload!'}
+              {dropZoneMessage}
             </div>
           </div>
           <input type="submit" value="submit" />

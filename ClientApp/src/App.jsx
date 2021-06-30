@@ -15,6 +15,7 @@ import { AddInventory } from './pages/AddInventory'
 import { DeleteNursery } from './pages/DeleteNursery'
 import { DeleteSpecies } from './pages/DeleteSpecies'
 import { ChangeNurseries } from './pages/ChangeNurseries'
+import { ChangeSpecies } from './pages/ChangeSpecies'
 
 function NewOwner() {
   return (
@@ -26,28 +27,6 @@ function NewOwner() {
         <h4>Create your </h4>
       </header>
     </>
-  )
-}
-
-function ChangeSpecies() {
-  return (
-    <div>
-      <header>
-        <h2>
-          <Link to="/">BambooFinder.com</Link>
-        </h2>
-        <h4>Edit/Delete Species</h4>
-      </header>
-
-      <button className="big">
-        {' '}
-        <Link>Edit Species</Link>
-      </button>
-
-      <button className="big">
-        <Link to="/delete-species">Delete Nursery</Link>
-      </button>
-    </div>
   )
 }
 
@@ -82,7 +61,6 @@ export function App() {
         <Route exact path="/new-nursery">
           <NewNursery />
         </Route>
-
         <Route exact path="/add-bamboo">
           <AddBamboo />
         </Route>

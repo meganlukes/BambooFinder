@@ -28,9 +28,7 @@ export function NurseryOwnersMain() {
       </button>
 
       <button className="big">
-        <Link exact path="/change-species">
-          Edit or Delete Species
-        </Link>
+        <Link to="/change-species">Edit or Delete Species</Link>
       </button>
     </div>
   )

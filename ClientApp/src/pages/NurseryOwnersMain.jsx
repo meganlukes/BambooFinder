@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Route, Switch, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export function NurseryOwnersMain() {
   return (
@@ -15,13 +15,13 @@ export function NurseryOwnersMain() {
       </header>
       <button className="big">
         {' '}
-        <Link to="/new-nursery">Add Your Nursery to BambooFinder.com</Link>
+        <Link to="/new-nursery">Add Nursery to BambooFinder.com</Link>
       </button>
       <button className="big">
         <Link to="/delete-nursery">Delete Nursery</Link>
       </button>
       <button className="big">
-        <Link to="/add-bamboo">Add a Bamboo Species to Our Database</Link>
+        <Link to="/add-bamboo">Add a Bamboo Species</Link>
       </button>
       <button className="big">
         {' '}

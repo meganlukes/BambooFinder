@@ -1,9 +1,5 @@
-import React, { useState, Component, useEffect } from 'react'
-import { Link, Route, Switch, useParams } from 'react-router-dom'
-import axios from 'axios'
-import { SetZone } from '../components/SetZone'
-import { SetGrowthHabit } from '../components/SetGrowthHabit'
-import { SetSize } from '../components/SetSize'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import bluechungii from '../Images/bluechungii.jpg'
 import runningclumping from '../Images/runningclumping.jpg'

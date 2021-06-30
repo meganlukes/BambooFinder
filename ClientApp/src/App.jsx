@@ -1,12 +1,10 @@
 import React, { Component, useState } from 'react'
 import { Link, useHistory, Route, Switch, useParams } from 'react-router-dom'
-import axios from 'axios'
 
 import './custom.scss'
 import { FrontPage } from './pages/FrontPage'
 import { ListOfNurseries } from './pages/ListOfNurseries'
 import { NurseryOwnersMain } from './pages/NurseryOwnersMain'
-import { SetHeight } from './components/SetHeight'
 import { BambooPlantsMain } from './pages/ListOfSpecies'
 import { AddBamboo } from './pages/AddBamboo'
 import { NewNursery } from './pages/NewNursery'
@@ -15,6 +13,7 @@ import { Species } from './pages/Species'
 import { Nursery } from './pages/Nursery'
 import { AddInventory } from './pages/AddInventory'
 import { DeleteNursery } from './pages/DeleteNursery'
+import { DeleteSpecies } from './pages/DeleteSpecies'
 
 function NewOwner() {
   return (
@@ -66,6 +65,9 @@ export function App() {
         </Route>
         <Route exact path="/delete-nursery">
           <DeleteNursery />
+        </Route>
+        <Route exact path="/delete-species">
+          <DeleteSpecies />
         </Route>
         <Route exact path="/new-owner">
           <NewOwner />

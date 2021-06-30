@@ -15,7 +15,7 @@ export function NewNursery() {
     Website: '',
   })
   const [newUser, setNewUser] = useState({
-    NurseryName: '',
+    Username: '',
     Email: '',
     Password: '',
   })
@@ -73,8 +73,8 @@ export function NewNursery() {
             type="text"
             className="inputLittleBox"
             placeholder=""
-            name="NurseryName"
-            value={newUser.NurseryName}
+            name="Username"
+            value={newUser.Username}
             onChange={handleStringFieldChange}
           />
           <div>Login Email Address</div>

@@ -10,7 +10,7 @@ namespace BambooFinder.Models
 
 
         [Required]
-        public string NurseryName { get; set; }
+        public string Username { get; set; }
         [Required]
         public string Email { get; set; }
         [JsonIgnore]

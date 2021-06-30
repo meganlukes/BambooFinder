@@ -18,6 +18,7 @@ export function Species() {
     maxLight: 4,
     minZone: 1,
     maxZone: 13,
+    photoURL: '',
     inventorySellers: [
       {
         nurseryId: 3,
@@ -70,11 +71,15 @@ export function Species() {
 
       <ol className="bambooInfoList">
         <li>
-          <img
-            className="mainpic"
-            src={bluechungii}
-            alt="Woman standing next to bamboo"
-          />
+          {bamboo.photoURL ? (
+            <img className="mainpic" src={bamboo.photoURL} alt="bamboo" />
+          ) : (
+            <img
+              className="mainpic"
+              src={bluechungii}
+              alt="Woman standing next to blue bamboo"
+            />
+          )}
         </li>
         <li>
           <table>

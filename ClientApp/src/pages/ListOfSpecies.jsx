@@ -222,11 +222,15 @@ export function BambooPlantsMain() {
               plant.clumping
             ) ? (
               <ol className="bambooListItem">
-                <img
-                  src={bluechungii}
-                  alt="Woman standing next to bamboo"
-                  width="200"
-                />
+                {plant.photoURL ? (
+                  <img className="mainpic" src={plant.photoURL} alt="bamboo" />
+                ) : (
+                  <img
+                    src={bluechungii}
+                    alt="Woman standing next to bamboo"
+                    width="200"
+                  />
+                )}
                 {/* Scientific name */}
                 <li>
                   <Link to={`/species/${plant.id}`}>

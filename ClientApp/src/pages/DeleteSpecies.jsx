@@ -52,11 +52,11 @@ export function DeleteSpecies() {
         <h2>
           <Link to="/">BambooFinder.com</Link>
         </h2>
-        <h4>Delete a Nursery</h4>
+        <h4>Delete a Species</h4>
       </header>
       <div className="addForm">
         <form onSubmit={handleFormSubmit}>
-          <div>Select a Nursery to Delete</div>
+          <div>Select a Species to Delete</div>
           <div>
             {plants.map((plant) => (
               <div key={plant.id}>

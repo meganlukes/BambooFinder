@@ -14,6 +14,7 @@ import { Nursery } from './pages/Nursery'
 import { AddInventory } from './pages/AddInventory'
 import { DeleteNursery } from './pages/DeleteNursery'
 import { DeleteSpecies } from './pages/DeleteSpecies'
+import { ChangeNurseries } from './pages/ChangeNurseries'
 
 function NewOwner() {
   return (
@@ -28,6 +29,28 @@ function NewOwner() {
   )
 }
 
+function ChangeSpecies() {
+  return (
+    <div>
+      <header>
+        <h2>
+          <Link to="/">BambooFinder.com</Link>
+        </h2>
+        <h4>Edit/Delete Species</h4>
+      </header>
+
+      <button className="big">
+        {' '}
+        <Link>Edit Species</Link>
+      </button>
+
+      <button className="big">
+        <Link to="/delete-species">Delete Nursery</Link>
+      </button>
+    </div>
+  )
+}
+
 export function App() {
   return (
     <main>
@@ -35,43 +58,55 @@ export function App() {
         <Route exact path="/">
           <FrontPage />
         </Route>
-        <Route exact path="/nursery-list">
-          <ListOfNurseries />
-        </Route>
+
         <Route exact path="/bamboo-list">
           <BambooPlantsMain />
-        </Route>
-        <Route exact path="/nursery-owners">
-          <NurseryOwnersMain />
-        </Route>
-        <Route exact path="/new-nursery">
-          <NewNursery />
-        </Route>
-        <Route exact path="/edit-nursery"></Route>
-        <Route exact path="/add-bamboo">
-          <AddBamboo />
-        </Route>
-        <Route exact path="/success">
-          <NurserySuccess />
-        </Route>
-        <Route exact path="/add-inventory">
-          <AddInventory />
         </Route>
         <Route exact path="/species/:id">
           <Species />
         </Route>
+
+        <Route exact path="/nursery-list">
+          <ListOfNurseries />
+        </Route>
         <Route exact path="/nursery/:id">
           <Nursery />
         </Route>
+
+        <Route exact path="/nursery-owners">
+          <NurseryOwnersMain />
+        </Route>
+        <Route exact path="/success">
+          <NurserySuccess />
+        </Route>
+        <Route exact path="/new-nursery">
+          <NewNursery />
+        </Route>
+
+        <Route exact path="/add-bamboo">
+          <AddBamboo />
+        </Route>
+
+        <Route exact path="/change-nursery">
+          <ChangeNurseries />
+        </Route>
+        <Route exact path="edit-nursery"></Route>
         <Route exact path="/delete-nursery">
           <DeleteNursery />
         </Route>
+        <Route exact path="/add-inventory">
+          <AddInventory />
+        </Route>
+
+        <Route exact path="/change-species">
+          <ChangeSpecies />
+        </Route>
+        <Route exact path="/edit-species"></Route>
         <Route exact path="/delete-species">
           <DeleteSpecies />
         </Route>
-        <Route exact path="/new-owner">
-          <NewOwner />
-        </Route>
+
+        <Route exact path="/new-owner"></Route>
       </Switch>
 
       <ol className="bottom banner">

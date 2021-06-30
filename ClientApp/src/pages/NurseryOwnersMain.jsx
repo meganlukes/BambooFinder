@@ -13,19 +13,24 @@ export function NurseryOwnersMain() {
           Add Your Nursery to BambooFinder.com to Connect with New Customers
         </h3>
       </header>
+
       <button className="big">
         {' '}
-        <Link to="/new-nursery">Add Nursery to BambooFinder.com</Link>
+        <Link to="/new-nursery">Add a Nursery</Link>
       </button>
-      <button className="big">
-        <Link to="/delete-nursery">Delete Nursery</Link>
-      </button>
+
       <button className="big">
         <Link to="/add-bamboo">Add a Bamboo Species</Link>
       </button>
+
       <button className="big">
-        {' '}
-        <Link to="/add-inventory">Add Bamboo Species to Your Inventory</Link>
+        <Link to="/change-nursery">Edit or Delete Nursery</Link>
+      </button>
+
+      <button className="big">
+        <Link exact path="/change-species">
+          Edit or Delete Species
+        </Link>
       </button>
     </div>
   )

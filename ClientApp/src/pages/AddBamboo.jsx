@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useDropzone } from 'react-dropzone'
+import { authHeader } from '../auth'
 
 export function AddBamboo() {
   const [newBamboo, setNewBamboo] = useState({
@@ -16,6 +17,8 @@ export function AddBamboo() {
     MaxZone: 13,
   })
   const history = useHistory()
+  const [errorMessage, setErrorMessage] = useState('')
+  const [isUploading, setIsUploading] = useState(false)
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop: onDropFile,
   })
@@ -52,10 +55,49 @@ export function AddBamboo() {
       history.push('/success')
     }
   }
-  function onDropFile(acceptedFiles) {
+  async function onDropFile(acceptedFiles) {
     // Do something with the files
     const fileToUpload = acceptedFiles[0]
     console.log(fileToUpload)
+
+    setIsUploading(true)
+
+    // Create a formData object so we can send this
+    // to the API that is expecting som form data.
+    const formData = new FormData()
+
+    // Append a field that is the form upload itself
+    formData.append('file', fileToUpload)
+
+    try {
+      // Use fetch to send an authorization header and
+      // a body containing the form data with the file
+      const response = await fetch('/api/Uploads', {
+        method: 'POST',
+        headers: {
+          ...authHeader(),
+        },
+        body: formData,
+      })
+
+      // If we receive a 200 OK response, set the
+      // URL of the photo in our state so that it is
+      // sent along when creating the bamboo,
+      // otherwise show an error
+      if (response.ok) {
+        const apiResponse = await response.json()
+
+        const url = apiResponse.url
+
+        setNewBamboo({ ...newBamboo, photoURL: url })
+      } else {
+        setErrorMessage('Unable to upload image')
+      }
+    } catch {
+      // Catch any network errors and show the user we could not process their upload
+      setErrorMessage('Unable to upload image')
+    }
+    setIsUploading(false)
   }
   return (
     <>

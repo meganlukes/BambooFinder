@@ -57,6 +57,8 @@ namespace BambooFinder.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
+
+
             // Indicate to the database context we want to add this new record
             _context.Users.Add(user);
             await _context.SaveChangesAsync();

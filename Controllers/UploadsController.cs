@@ -49,7 +49,8 @@ namespace BambooFinder.Controllers
         // new values for the record.
         //
         [HttpPost]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        //Re-implement below code one user is completed
+        // [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [RequestSizeLimit(10_000_000)]
         public async Task<ActionResult> UploadAsync(IFormFile file)
         {
@@ -88,7 +89,7 @@ namespace BambooFinder.Controllers
                 return BadRequest("Upload failed");
             }
 
-            return Ok();
+
         }
     }
 }

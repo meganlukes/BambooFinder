@@ -1,26 +1,28 @@
-import React, { useState } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useParams, Link, useHistory } from 'react-router-dom'
 import { useDropzone } from 'react-dropzone'
 import { authHeader } from '../auth'
 
 export function EditSpecies() {
+  const params = useParams()
+  const id = params.id
   const [bamboo, setBamboo] = useState({
     Name: '',
     Info: '',
     CommonName: '',
-    MinHeight: 1,
-    MaxHeight: 150,
+    MinHeight: null,
+    MaxHeight: null,
     Clumping: true,
-    MinLight: 1,
-    MaxLight: 4,
-    MinZone: 1,
-    MaxZone: 13,
+    MinLight: null,
+    MaxLight: null,
+    MinZone: null,
+    MaxZone: null,
     PhotoURL: '',
   })
   const history = useHistory()
   const [errorMessage, setErrorMessage] = useState('')
   const [isUploading, setIsUploading] = useState(false)
-
+  const [isLoaded, setIsLoaded] = useState(false)
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop: onDropFile,
   })
@@ -43,6 +45,21 @@ export function EditSpecies() {
 
     setBamboo({ ...bamboo, [fieldName]: value })
   }
+
+  useEffect(() => {
+    async function fetchBamboo() {
+      const response = await fetch(`/api/Species/${id}`)
+
+      if (response.ok) {
+        const apiData = await response.json()
+
+        setBamboo(apiData)
+        setIsLoaded(true)
+      }
+    }
+
+    fetchBamboo()
+  }, [id])
 
   async function handleFormSubmit(event) {
     event.preventDefault()
@@ -126,7 +143,6 @@ export function EditSpecies() {
           <input
             type="text"
             className="inputLittleBox"
-            placeholder="ex. Bambusa gracilis"
             name="Name"
             value={bamboo.Name}
             onChange={handleStringFieldChange}
@@ -135,7 +151,6 @@ export function EditSpecies() {
           <input
             type="text"
             className="inputLittleBox"
-            placeholder="ex. Graceful Bamboo"
             name="CommonName"
             value={bamboo.CommonName}
             onChange={handleStringFieldChange}
@@ -242,7 +257,6 @@ export function EditSpecies() {
           <input
             type="text"
             className="inputBigBox"
-            placeholder="ex. Graceful Bamboo is an easy to care for species"
             name="Info"
             value={bamboo.Info}
             onChange={handleStringFieldChange}

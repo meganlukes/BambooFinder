@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import { Link, useHistory, Route, Switch, useParams } from 'react-router-dom'
 
 import './custom.scss'
@@ -17,6 +17,7 @@ import { DeleteSpecies } from './pages/DeleteSpecies'
 import { ChangeNurseries } from './pages/ChangeNurseries'
 import { ChangeSpecies } from './pages/ChangeSpecies'
 import { EditSpecies } from './pages/EditSpecies'
+import { ListOfSpeciesToEdit } from './pages/ListOfSpeciesToEdit'
 
 export function App() {
   return (
@@ -67,7 +68,10 @@ export function App() {
         <Route exact path="/change-species">
           <ChangeSpecies />
         </Route>
-        <Route exact path="/edit-species">
+        <Route exact path="/edit-species-list">
+          <ListOfSpeciesToEdit />
+        </Route>
+        <Route exact path="/species/:id/edit">
           <EditSpecies />
         </Route>
         <Route exact path="/delete-species">

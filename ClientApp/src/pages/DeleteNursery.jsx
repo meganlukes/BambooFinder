@@ -34,10 +34,13 @@ export function DeleteNursery() {
   async function handleFormSubmit(event) {
     event.preventDefault()
 
-    const response = await fetch(`/api/Nurseries/${deleteNurseryId}`, {
-      method: 'DELETE',
-      headers: { 'content-type': 'application/json', ...authHeader() },
-    })
+    const response = await fetch(
+      `/api/Nurseries/${nurseryToDelete.deleteNurseryId}`,
+      {
+        method: 'DELETE',
+        headers: { 'content-type': 'application/json', ...authHeader() },
+      }
+    )
 
     if (response.status === 200 || response.status === 204) {
       console.log('Nursery Deleted')

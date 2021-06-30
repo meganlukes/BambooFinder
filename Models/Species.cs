@@ -35,6 +35,8 @@ namespace BambooFinder.Models
 
         [Required]
         public int MaxLight { get; set; }
+
+        public string PhotoURL { get; set; }
         public List<InventorySellers> InventorySellers { get; set; }
     }
 }

@@ -73,7 +73,9 @@ export function App() {
       </Switch>
 
       <ol className="bottom banner">
-        <li className="horizontalspace">BambooFinder.com</li>
+        <li className="horizontalspace">
+          <Link to="/">BambooFinder.com</Link>
+        </li>
         <li className="horizontalspace">
           Contact us at <span>info@bamboofinder.com</span>
         </li>

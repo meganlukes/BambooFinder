@@ -10,19 +10,18 @@ export function EditSpecies() {
     Name: '',
     Info: '',
     CommonName: '',
-    MinHeight: null,
-    MaxHeight: null,
+    MinHeight: 1,
+    MaxHeight: 150,
     Clumping: true,
-    MinLight: null,
-    MaxLight: null,
-    MinZone: null,
-    MaxZone: null,
+    MinLight: 1,
+    MaxLight: 4,
+    MinZone: 1,
+    MaxZone: 13,
     PhotoURL: '',
   })
   const history = useHistory()
-  const [errorMessage, setErrorMessage] = useState('')
+
   const [isUploading, setIsUploading] = useState(false)
-  const [isLoaded, setIsLoaded] = useState(false)
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop: onDropFile,
   })
@@ -54,7 +53,6 @@ export function EditSpecies() {
         const apiData = await response.json()
 
         setBamboo(apiData)
-        setIsLoaded(true)
       }
     }
 
@@ -82,41 +80,26 @@ export function EditSpecies() {
 
     setIsUploading(true)
 
-    // Create a formData object so we can send this
-    // to the API that is expecting som form data.
     const formData = new FormData()
 
-    // Append a field that is the form upload itself
     formData.append('file', fileToUpload)
 
-    try {
-      // Use fetch to send an authorization header and
-      // a body containing the form data with the file
-      const response = await fetch('/api/Uploads', {
-        method: 'POST',
-        headers: {
-          ...authHeader(),
-        },
-        body: formData,
-      })
+    const response = await fetch('/api/Uploads', {
+      method: 'POST',
+      headers: {
+        ...authHeader(),
+      },
+      body: formData,
+    })
 
-      // If we receive a 200 OK response, set the
-      // URL of the photo in our state so that it is
-      // sent along when creating the bamboo,
-      // otherwise show an error
-      if (response.ok) {
-        const apiResponse = await response.json()
+    if (response.ok) {
+      const apiResponse = await response.json()
 
-        const url = apiResponse.url
+      const url = apiResponse.url
 
-        setBamboo({ ...bamboo, PhotoURL: url })
-      } else {
-        setErrorMessage('Unable to upload image')
-      }
-    } catch {
-      // Catch any network errors and show the user we could not process their upload
-      setErrorMessage('Unable to upload image')
+      setBamboo({ ...bamboo, PhotoURL: url })
     }
+
     setIsUploading(false)
   }
   let dropZoneMessage = 'Drag a picture of the restaurant here to upload!'

@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Link, useHistory, Route, Switch, useParams } from 'react-router-dom'
+import React from 'react'
+import { Link, Route, Switch } from 'react-router-dom'
 
 import './custom.scss'
 import { FrontPage } from './pages/FrontPage'

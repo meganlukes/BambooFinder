@@ -18,7 +18,7 @@ export function AddBamboo() {
     PhotoURL: '',
   })
   const history = useHistory()
-  const [errorMessage, setErrorMessage] = useState('')
+
   const [isUploading, setIsUploading] = useState(false)
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -65,41 +65,26 @@ export function AddBamboo() {
 
     setIsUploading(true)
 
-    // Create a formData object so we can send this
-    // to the API that is expecting som form data.
     const formData = new FormData()
 
-    // Append a field that is the form upload itself
     formData.append('file', fileToUpload)
 
-    try {
-      // Use fetch to send an authorization header and
-      // a body containing the form data with the file
-      const response = await fetch('/api/Uploads', {
-        method: 'POST',
-        headers: {
-          ...authHeader(),
-        },
-        body: formData,
-      })
+    const response = await fetch('/api/Uploads', {
+      method: 'POST',
+      headers: {
+        ...authHeader(),
+      },
+      body: formData,
+    })
 
-      // If we receive a 200 OK response, set the
-      // URL of the photo in our state so that it is
-      // sent along when creating the bamboo,
-      // otherwise show an error
-      if (response.ok) {
-        const apiResponse = await response.json()
+    if (response.ok) {
+      const apiResponse = await response.json()
 
-        const url = apiResponse.url
+      const url = apiResponse.url
 
-        setNewBamboo({ ...newBamboo, PhotoURL: url })
-      } else {
-        setErrorMessage('Unable to upload image')
-      }
-    } catch {
-      // Catch any network errors and show the user we could not process their upload
-      setErrorMessage('Unable to upload image')
+      setNewBamboo({ ...newBamboo, PhotoURL: url })
     }
+
     setIsUploading(false)
   }
   let dropZoneMessage = 'Drag a picture of the restaurant here to upload!'

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
+import { useDropzone } from 'react-dropzone'
 
 export function AddBamboo() {
   const [newBamboo, setNewBamboo] = useState({
@@ -15,6 +16,9 @@ export function AddBamboo() {
     MaxZone: 13,
   })
   const history = useHistory()
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop: onDropFile,
+  })
   function handleStringFieldChange(event) {
     const value = event.target.value
     const fieldName = event.target.name
@@ -48,7 +52,11 @@ export function AddBamboo() {
       history.push('/success')
     }
   }
-
+  function onDropFile(acceptedFiles) {
+    // Do something with the files
+    const fileToUpload = acceptedFiles[0]
+    console.log(fileToUpload)
+  }
   return (
     <>
       <header>
@@ -184,6 +192,15 @@ export function AddBamboo() {
             value={newBamboo.Info}
             onChange={handleStringFieldChange}
           />
+          <div>Photo</div>
+          <div className="file-drop-zone">
+            <div {...getRootProps()}>
+              <input {...getInputProps()} />
+              {isDragActive
+                ? 'Drop the files here ...'
+                : 'Drag a picture of the bamboo here to upload!'}
+            </div>
+          </div>
           <input type="submit" value="submit" />
         </form>
       </div>

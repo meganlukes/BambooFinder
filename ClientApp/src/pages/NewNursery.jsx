@@ -14,16 +14,16 @@ export function NewNursery() {
     Description: '',
     Website: '',
   })
-  const [newUser, setNewUser] = useState({
-    Username: '',
-    Email: '',
-    Password: '',
-  })
+  // const [newUser, setNewUser] = useState({
+  //   Username: '',
+  //   Email: '',
+  //   Password: '',
+  // })
   const history = useHistory()
   function handleStringFieldChange(event) {
     const value = event.target.value
     const fieldName = event.target.name
-    setNewUser({ ...newUser, [fieldName]: value })
+    // setNewUser({ ...newUser, [fieldName]: value })
 
     setNewNursery({ ...newNursery, [fieldName]: value })
   }
@@ -37,15 +37,15 @@ export function NewNursery() {
   async function handleFormSubmit(event) {
     event.preventDefault()
 
-    const response2 = await fetch('/api/Users', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(newUser),
-    })
+    // const response2 = await fetch('/api/Users', {
+    //   method: 'POST',
+    //   headers: { 'content-type': 'application/json' },
+    //   body: JSON.stringify(newUser),
+    // })
 
-    if (response2.ok) {
-      console.log('NurseryUser Successfully added')
-    }
+    // if (response2.ok) {
+    //   console.log('NurseryUser Successfully added')
+    // }
     const response = await fetch('/api/Nurseries', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
@@ -68,7 +68,7 @@ export function NewNursery() {
       </header>
       <div className="addForm">
         <form onSubmit={handleFormSubmit}>
-          <div>Username</div>
+          {/* <div>Username</div>
           <input
             type="text"
             className="inputLittleBox"
@@ -92,7 +92,7 @@ export function NewNursery() {
             name="Email"
             value={newUser.Email}
             onChange={handleStringFieldChange}
-          />
+          /> */}
           <div>Nursery Name</div>
           <input
             type="text"

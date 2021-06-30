@@ -13,7 +13,7 @@ export function ChangeSpecies() {
 
       <button className="big">
         {' '}
-        <Link>Edit Bamboo Species</Link>
+        <Link to="/edit-species">Edit Bamboo Species</Link>
       </button>
 
       <button className="big">

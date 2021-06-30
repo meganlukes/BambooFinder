@@ -16,19 +16,7 @@ import { DeleteNursery } from './pages/DeleteNursery'
 import { DeleteSpecies } from './pages/DeleteSpecies'
 import { ChangeNurseries } from './pages/ChangeNurseries'
 import { ChangeSpecies } from './pages/ChangeSpecies'
-
-function NewOwner() {
-  return (
-    <>
-      <header>
-        <h2>
-          <Link to="/">BambooFinder.com</Link>
-        </h2>
-        <h4>Create your </h4>
-      </header>
-    </>
-  )
-}
+import { EditSpecies } from './pages/EditSpecies'
 
 export function App() {
   return (
@@ -79,12 +67,12 @@ export function App() {
         <Route exact path="/change-species">
           <ChangeSpecies />
         </Route>
-        <Route exact path="/edit-species"></Route>
+        <Route exact path="/edit-species">
+          <EditSpecies />
+        </Route>
         <Route exact path="/delete-species">
           <DeleteSpecies />
         </Route>
-
-        <Route exact path="/new-owner"></Route>
       </Switch>
 
       <ol className="bottom banner">

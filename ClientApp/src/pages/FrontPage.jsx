@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Route, Switch, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export function FrontPage() {
   return (

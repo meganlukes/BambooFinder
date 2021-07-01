@@ -18,6 +18,7 @@ import { ChangeNurseries } from './pages/ChangeNurseries'
 import { ChangeSpecies } from './pages/ChangeSpecies'
 import { EditSpecies } from './pages/EditSpecies'
 import { ListOfSpeciesToEdit } from './pages/ListOfSpeciesToEdit'
+import { EditNursery } from './pages/EditNursery'
 
 export function App() {
   return (
@@ -57,7 +58,9 @@ export function App() {
         <Route exact path="/change-nursery">
           <ChangeNurseries />
         </Route>
-        <Route exact path="edit-nursery"></Route>
+        <Route exact path="edit-nursery">
+          <EditNursery />
+        </Route>
         <Route exact path="/delete-nursery">
           <DeleteNursery />
         </Route>

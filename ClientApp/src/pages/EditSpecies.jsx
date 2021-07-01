@@ -7,9 +7,9 @@ export function EditSpecies() {
   const params = useParams()
   const id = params.id
   const [bamboo, setBamboo] = useState({
-    Name: '',
+    name: '',
     Info: '',
-    CommonName: '',
+    commonName: '',
     MinHeight: 1,
     MaxHeight: 150,
     Clumping: true,
@@ -127,7 +127,7 @@ export function EditSpecies() {
             type="text"
             className="inputLittleBox"
             name="Name"
-            value={bamboo.Name}
+            value={bamboo.name}
             onChange={handleStringFieldChange}
           />
           <div>Common Name (optional)</div>
@@ -135,7 +135,7 @@ export function EditSpecies() {
             type="text"
             className="inputLittleBox"
             name="CommonName"
-            value={bamboo.CommonName}
+            value={bamboo.commonName}
             onChange={handleStringFieldChange}
           />
 

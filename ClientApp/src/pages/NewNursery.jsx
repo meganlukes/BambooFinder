@@ -200,14 +200,21 @@ export function NewNursery() {
           />
 
           <div>Additional Information (optional)</div>
-          <input
+          <textarea
+            className="inputBigBox"
+            placeholder="Our family-owned nursery has been in operation for over 20 years. We carry more than 20 species and specialize in clumping bamboo. We are able to ship our plants anywhere in the lower 48 states, as well as provide specialty fertilizers and bamboo barriers."
+            name="Description"
+            value={newNursery.Description}
+            onChange={handleStringFieldChange}
+          ></textarea>
+          {/* <input
             type="text"
             className="inputBigBox"
             placeholder="Our family-owned nursery has been in operation for over 20 years. We carry more than 20 species and specialize in clumping bamboo. We are able to ship our plants anywhere in the lower 48 states, as well as provide specialty fertilizers and bamboo barriers."
             name="Description"
             value={newNursery.Description}
             onChange={handleStringFieldChange}
-          />
+          /> */}
           <input type="submit" value="submit" />
         </form>
       </div>

@@ -206,17 +206,16 @@ export function BambooPlantsMain() {
           </li>
         </ul>
       </div>
-
-      <ol className="bambooList">
-        {plants.map((plant) => (
-          <li key={plant.id}>
-            {sift(
-              plant.minLight,
-              plant.maxLight,
-              plant.minZone,
-              plant.maxZone,
-              plant.clumping
-            ) ? (
+      {plants.map((plant) => (
+        <div key={plant.id}>
+          {sift(
+            plant.minLight,
+            plant.maxLight,
+            plant.minZone,
+            plant.maxZone,
+            plant.clumping
+          ) ? (
+            <ol className="bambooList">
               <ol className="bambooListItem">
                 {plant.photoURL ? (
                   <img className="mainpic" src={plant.photoURL} alt="bamboo" />
@@ -261,10 +260,10 @@ export function BambooPlantsMain() {
                   <li>{plant.clumping ? 'Clumping' : 'Running'}</li>
                 </ul>
               </ol>
-            ) : null}
-          </li>
-        ))}
-      </ol>
+            </ol>
+          ) : null}
+        </div>
+      ))}
     </div>
   )
 }

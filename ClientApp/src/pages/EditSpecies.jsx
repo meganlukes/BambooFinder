@@ -62,7 +62,7 @@ export function EditSpecies() {
   async function handleFormSubmit(event) {
     event.preventDefault()
 
-    const response = await fetch('/api/Species', {
+    const response = await fetch(`/api/Species/${id}`, {
       method: 'PUT',
       headers: { 'content-type': 'application/json', ...authHeader() },
       body: JSON.stringify(bamboo),

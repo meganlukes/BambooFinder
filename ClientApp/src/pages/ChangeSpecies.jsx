@@ -10,15 +10,16 @@ export function ChangeSpecies() {
         </h2>
         <h4>Edit/Delete Species</h4>
       </header>
+      <div className="menuList">
+        <button className="big">
+          {' '}
+          <Link to="/edit-species-list">Edit Bamboo Species</Link>
+        </button>
 
-      <button className="big">
-        {' '}
-        <Link to="/edit-species-list">Edit Bamboo Species</Link>
-      </button>
-
-      <button className="big">
-        <Link to="/delete-species">Delete Bamboo Species</Link>
-      </button>
+        <button className="big">
+          <Link to="/delete-species">Delete Bamboo Species</Link>
+        </button>
+      </div>
     </div>
   )
 }

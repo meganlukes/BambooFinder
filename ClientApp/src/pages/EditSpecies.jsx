@@ -144,7 +144,7 @@ export function EditSpecies() {
             <input
               type="radio"
               id="false"
-              name="Clumping"
+              name="clumping"
               value={false}
               onChange={handleBoolFieldChange}
             />
@@ -154,7 +154,7 @@ export function EditSpecies() {
             <input
               type="radio"
               id="true"
-              name="Clumping"
+              name="clumping"
               value={true}
               onChange={handleBoolFieldChange}
             />
@@ -170,7 +170,7 @@ export function EditSpecies() {
               name="MinZone"
               min="1"
               max="13"
-              value={bamboo.MinZone}
+              value={bamboo.minZone}
               onChange={handleIntFieldChange}
             ></input>{' '}
             to{' '}
@@ -181,7 +181,7 @@ export function EditSpecies() {
               name="MaxZone"
               min="1"
               max="13"
-              value={bamboo.MaxZone}
+              value={bamboo.maxZone}
               onChange={handleIntFieldChange}
             ></input>
           </label>
@@ -195,7 +195,7 @@ export function EditSpecies() {
               name="MinLight"
               min="1"
               max="4"
-              value={bamboo.MinLight}
+              value={bamboo.minLight}
               onChange={handleIntFieldChange}
             ></input>{' '}
             to{' '}
@@ -206,7 +206,7 @@ export function EditSpecies() {
               name="MaxLight"
               min="1"
               max="4"
-              value={bamboo.MaxLight}
+              value={bamboo.maxLight}
               onChange={handleIntFieldChange}
             ></input>
           </label>
@@ -220,7 +220,7 @@ export function EditSpecies() {
               name="MinHeight"
               min="1"
               max="150"
-              value={bamboo.MinHeight}
+              value={bamboo.minHeight}
               onChange={handleIntFieldChange}
             ></input>
             ft to{' '}
@@ -231,19 +231,19 @@ export function EditSpecies() {
               name="MaxHeight"
               min="1"
               max="150"
-              value={bamboo.MaxHeight}
+              value={bamboo.maxHeight}
               onChange={handleIntFieldChange}
             ></input>
             ft.
           </label>
           <div>Additional Information (optional)</div>
-          <input
-            type="text"
+          <textarea
             className="inputBigBox"
             name="Info"
-            value={bamboo.Info}
+            value={bamboo.info}
             onChange={handleStringFieldChange}
-          />
+          ></textarea>
+
           <div>Photo</div>
           {bamboo.PhotoURL ? (
             <p>

@@ -224,14 +224,14 @@ export function AddBamboo() {
             ft.
           </label>
           <div>Additional Information (optional)</div>
-          <input
-            type="text"
+          <textarea
             className="inputBigBox"
             placeholder="ex. Graceful Bamboo is an easy to care for species"
             name="Info"
             value={newBamboo.Info}
             onChange={handleStringFieldChange}
-          />
+          ></textarea>
+
           <div>Photo</div>
           {newBamboo.PhotoURL ? (
             <p>

@@ -102,7 +102,8 @@ export function EditSpecies() {
 
     setIsUploading(false)
   }
-  let dropZoneMessage = 'Drag a picture of the restaurant here to upload!'
+  let dropZoneMessage =
+    'Drag a picture of the bamboo here to upload, we recommend that you choose one that shows the full size rather than a close-up of a single cane.'
 
   if (isUploading) {
     dropZoneMessage = 'Uploading...'

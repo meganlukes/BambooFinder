@@ -13,7 +13,7 @@ export function ChangeNurseries() {
       <div className="menuList">
         <button className="big">
           {' '}
-          <Link>Edit Nursery</Link>
+          <Link to="/edit-nurseries-list">Edit Nursery</Link>
         </button>
 
         <button className="big">

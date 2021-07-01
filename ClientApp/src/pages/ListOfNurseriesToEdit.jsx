@@ -21,7 +21,7 @@ export function ListOfNurseriesToEdit() {
         <h2>
           <Link to="/">BambooFinder.com</Link>
         </h2>
-        <h3>Select a Nursery to Edit</h3>
+        <h3>Choose a Nursery to Edit</h3>
       </header>
       <table>
         <tbody>

@@ -92,6 +92,25 @@ export function BambooPlantsMain() {
 
       <p className="para">
         <label>USDA Plant Hardiness Zone</label>
+        <iframe
+          src="https://www.plantmaps.com/hardiness-zone-zipcode.php"
+          name="Find the USDA Hardiness Zone for your Zipocde and Map it"
+          width="220"
+          scrolling="No"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          height="110"
+        >
+          [Your browser doesn't support IFrames.{' '}
+          <a
+            href="//www.plantmaps.com/hardiness-zone-zipcode.php"
+            target="_blank"
+          >
+            Click here
+          </a>{' '}
+          to find the USDA hardiness zone for your zipcode.]
+        </iframe>
         <form>
           <input
             type="number"
@@ -101,8 +120,7 @@ export function BambooPlantsMain() {
             onChange={handleIntFieldChange}
           />
         </form>
-        Click <a href="https://planthardiness.ars.usda.gov/PHZMWeb/">here</a> to
-        find your USDA zone
+
         <details>
           USDA hardiness zones are used to describe a plant's cold-tolerance.
           Bamboo can be grown outside its hardiness zone if it is kept in a
@@ -111,7 +129,9 @@ export function BambooPlantsMain() {
           necessarily correlate with it's preferred climate. A zone 8 bamboo
           might not be able to tolerate the heat and humidity of the southeast,
           or it might be stunted by the lower temperatures of the pacific
-          northwest.
+          northwest. Click{' '}
+          <a href="https://planthardiness.ars.usda.gov/PHZMWeb/">here</a> to
+          find your USDA zone
         </details>
       </p>
 

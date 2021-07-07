@@ -93,6 +93,7 @@ export function BambooPlantsMain() {
       <p className="para">
         <label>USDA Plant Hardiness Zone</label>
         <iframe
+          title="Plant Zone Finder"
           src="https://www.plantmaps.com/hardiness-zone-zipcode.php"
           name="Find the USDA Hardiness Zone for your Zipocde and Map it"
           width="240"

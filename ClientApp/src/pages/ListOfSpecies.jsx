@@ -119,9 +119,9 @@ export function BambooPlantsMain() {
         Clumping or Running
         <div>
           <img
+            className="runningimg"
             src={runningclumping}
             alt="Diagram showing the difference between running and clumping bamboo."
-            width="400"
           />
         </div>
         <details>

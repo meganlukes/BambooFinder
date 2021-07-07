@@ -91,7 +91,16 @@ export function BambooPlantsMain() {
       </form>
 
       <p className="para">
-        <label>USDA Plant Hardiness Zone</label>
+        <label>USDA Plant Hardiness Zone (Required)</label>
+        <form>
+          <input
+            type="number"
+            placeholder="ex. 9 (required)"
+            name="siftZone"
+            value={sifters.siftZone}
+            onChange={handleIntFieldChange}
+          />
+        </form>
         <iframe
           title="Plant Zone Finder"
           src="https://www.plantmaps.com/hardiness-zone-zipcode.php"
@@ -111,15 +120,6 @@ export function BambooPlantsMain() {
           </a>{' '}
           to find the USDA hardiness zone for your zipcode.]
         </iframe>
-        <form>
-          <input
-            type="number"
-            placeholder="ex. 9 (required)"
-            name="siftZone"
-            value={sifters.siftZone}
-            onChange={handleIntFieldChange}
-          />
-        </form>
 
         <details>
           USDA hardiness zones are used to describe a plant's cold-tolerance.
@@ -136,7 +136,54 @@ export function BambooPlantsMain() {
       </p>
 
       <p className="para">
-        Clumping or Running
+        Growth Pattern (Required)
+        {/* <ul className="flexinput">
+          <li>
+            <input
+              type="radio"
+              id="running"
+              name="siftClumping"
+              value={false}
+              checked={!sifters.siftClumping}
+              onChange={handleBoolFieldChange}
+            />
+            <label for="running">Running</label>
+          </li>
+
+          <li>
+            <input
+              type="radio"
+              id="clumping"
+              name="siftClumping"
+              value={true}
+              checked={sifters.siftClumping}
+              onChange={handleBoolFieldChange}
+            />
+            <label for="clumping">Clumping</label>
+          </li>
+        </ul> */}
+        <div>
+          <input
+            type="radio"
+            id="running"
+            name="siftClumping"
+            value={false}
+            checked={!sifters.siftClumping}
+            onChange={handleBoolFieldChange}
+          />
+          <label for="running">Running</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="clumping"
+            name="siftClumping"
+            value={true}
+            checked={sifters.siftClumping}
+            onChange={handleBoolFieldChange}
+          />
+          <label for="clumping">Clumping</label>
+        </div>
         <div>
           <img
             className="runningimg"
@@ -155,7 +202,7 @@ export function BambooPlantsMain() {
       </p>
 
       <div className="para">
-        <ul className="flexinput">
+        {/* <ul className="flexinput">
           <li>
             <label>Growth Habit</label>
             <div>
@@ -181,50 +228,50 @@ export function BambooPlantsMain() {
               <label for="clumping">Clumping</label>
             </div>
           </li>
-          <li>
-            <label>Sun Requirements</label>
-            <div>
-              <input
-                type="radio"
-                id="shade"
-                name="siftLight"
-                value={1}
-                onChange={handleIntFieldChange}
-              />
-              <label for="shade">Shade</label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                id="partshade"
-                name="siftLight"
-                value={2}
-                onChange={handleIntFieldChange}
-              />
-              <label for="partshade">Part Shade</label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                id="partsun"
-                name="siftLight"
-                value={3}
-                onChange={handleIntFieldChange}
-              />
-              <label for="partsun">Part Sun</label>
-            </div>
-            <div>
-              <input
-                type="radio"
-                id="fullsun"
-                name="siftLight"
-                value={4}
-                onChange={handleIntFieldChange}
-              />
-              <label for="fullsun">Full Sun</label>
-            </div>
-          </li>
-        </ul>
+          <li> */}
+        <label>Sun Requirements</label>
+        <div>
+          <input
+            type="radio"
+            id="shade"
+            name="siftLight"
+            value={1}
+            onChange={handleIntFieldChange}
+          />
+          <label for="shade">Shade (No Direct Sun)</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="partshade"
+            name="siftLight"
+            value={2}
+            onChange={handleIntFieldChange}
+          />
+          <label for="partshade">Part Shade (2-4 Hours Direct Sun)</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="partsun"
+            name="siftLight"
+            value={3}
+            onChange={handleIntFieldChange}
+          />
+          <label for="partsun">Part Sun (4-6 Hours Direct Sun)</label>
+        </div>
+        <div>
+          <input
+            type="radio"
+            id="fullsun"
+            name="siftLight"
+            value={4}
+            onChange={handleIntFieldChange}
+          />
+          <label for="fullsun">Full Sun (6+ Hours Direct Sun)</label>
+        </div>
+        {/* </li>
+        </ul> */}
       </div>
       <ol className="bambooList">
         {plants.map((plant) => (

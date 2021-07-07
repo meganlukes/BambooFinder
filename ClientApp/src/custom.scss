@@ -265,13 +265,14 @@ input {
   display: flex;
   flex-direction: row;
   text-align: left;
+  justify-content: center;
 }
 a,
 a:link {
   color: black;
 }
 a:visited {
-  color: rgb(40, 49, 25);
+  color: black;
 }
 a:focus {
   color: black;

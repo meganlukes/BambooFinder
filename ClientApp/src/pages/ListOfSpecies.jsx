@@ -95,17 +95,16 @@ export function BambooPlantsMain() {
         <iframe
           src="https://www.plantmaps.com/hardiness-zone-zipcode.php"
           name="Find the USDA Hardiness Zone for your Zipocde and Map it"
-          width="220"
+          width="240"
           scrolling="No"
           frameborder="0"
-          marginheight="0"
-          marginwidth="0"
           height="110"
         >
           [Your browser doesn't support IFrames.{' '}
           <a
             href="//www.plantmaps.com/hardiness-zone-zipcode.php"
             target="_blank"
+            rel="noreferrer"
           >
             Click here
           </a>{' '}

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link, Route, Switch } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, Route, Switch, useHistory } from 'react-router-dom'
 
 import './custom.scss'
 import { FrontPage } from './pages/FrontPage'
@@ -20,6 +20,12 @@ import { EditSpecies } from './pages/EditSpecies'
 import { ListOfSpeciesToEdit } from './pages/ListOfSpeciesToEdit'
 import { EditNursery } from './pages/EditNursery'
 import { ListOfNurseriesToEdit } from './pages/ListOfNurseriesToEdit'
+
+function SignUp() {
+  const history = useHistory()
+  const [errorMessage, setErrorMessage] = useState()
+  return <div></div>
+}
 
 export function App() {
   return (

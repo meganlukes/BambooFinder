@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import bluechungii from '../Images/bluechungii.jpg'
+import { Header } from '../components/Header'
 
 export function Species() {
   const params = useParams()
@@ -59,11 +60,7 @@ export function Species() {
 
   return (
     <>
-      <header>
-        <h2>
-          <Link to="/">BambooFinder.com</Link>
-        </h2>
-      </header>
+      <Header />
       <p className="name">
         <i>{bamboo.name} </i>
         <q>{bamboo.commonName}</q>

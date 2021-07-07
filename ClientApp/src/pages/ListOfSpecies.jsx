@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 import bluechungii from '../Images/bluechungii.jpg'
 import runningclumping from '../Images/runningclumping.jpg'
+import { Header } from '../components/Header'
 
-//http://www.bamboogarden.com/Smaller%20Running%20Bamboos.htm
 export function BambooPlantsMain() {
   const [filterText, setFilterText] = useState('')
   const [plants, setPlants] = useState([])
@@ -71,14 +71,17 @@ export function BambooPlantsMain() {
 
   return (
     <div>
-      <header>
+      {/* <header>
         <h2>
           <Link to="/">BambooFinder.com</Link>
         </h2>
         <h4>Bamboo Plants</h4>
         <h3>Find the bamboo that's right for you</h3>
-      </header>
-
+      </header> */}
+      <Header
+        pageName="Bamboo Plants"
+        pageDescript="Find the bamboo that's right for you"
+      />
       <form>
         <input
           type="text"

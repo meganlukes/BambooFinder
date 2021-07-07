@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { authHeader } from '../auth'
+import { Header } from '../components/Header'
 
 export function DeleteSpecies() {
   const history = useHistory()
@@ -48,12 +49,7 @@ export function DeleteSpecies() {
 
   return (
     <>
-      <header>
-        <h2>
-          <Link to="/">BambooFinder.com</Link>
-        </h2>
-        <h4>Delete a Species</h4>
-      </header>
+      <Header pageName="Delete a Species" />
       <div className="addForm">
         <form onSubmit={handleFormSubmit}>
           <div>Select a Species to Delete</div>

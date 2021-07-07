@@ -1,15 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Header } from '../components/Header'
 
 export function NurserySuccess() {
   return (
     <>
-      <header>
-        <h2>
-          <Link to="/">BambooFinder.com</Link>
-        </h2>
-        <h3>Success!</h3>
-      </header>
+      <Header pageDescript="Success!" />
       <button className="big">
         {' '}
         <Link to="/nursery-owners">Return to Nursery Owners Main Page</Link>

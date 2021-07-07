@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
+import { Header } from '../components/Header'
 
 export function AddInventory() {
   const [newInventorySellers, setNewInventorySellers] = useState({
@@ -56,12 +57,7 @@ export function AddInventory() {
 
   return (
     <>
-      <header>
-        <h2>
-          <Link to="/">BambooFinder.com</Link>
-        </h2>
-        <h4>Add Bamboo to Your Inventory</h4>
-      </header>
+      <Header pageName="Add Bamboo to Your Inventory" />
       <div className="addForm">
         <form onSubmit={handleFormSubmit}>
           <div>Nursery</div>

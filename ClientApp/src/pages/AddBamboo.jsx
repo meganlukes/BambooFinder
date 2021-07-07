@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useDropzone } from 'react-dropzone'
 import { authHeader } from '../auth'
+import { Header } from '../components/Header'
 
 export function AddBamboo() {
   const [newBamboo, setNewBamboo] = useState({
@@ -99,12 +100,8 @@ export function AddBamboo() {
 
   return (
     <>
-      <header>
-        <h2>
-          <Link to="/">BambooFinder.com</Link>
-        </h2>
-        <h4>Add a New Bamboo Species</h4>
-      </header>
+      <Header pageName="Add a New Bamboo Species" />
+
       <div className="addForm">
         <form onSubmit={handleFormSubmit}>
           <div>Species Name</div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, Link, useHistory } from 'react-router-dom'
 import { useDropzone } from 'react-dropzone'
 import { authHeader } from '../auth'
+import { Header } from '../components/Header'
 
 export function EditNursery() {
   const params = useParams()
@@ -18,5 +19,9 @@ export function EditNursery() {
     description: '',
     website: '',
   })
-  return <div></div>
+  return (
+    <div>
+      <Header pageName="Edit Nursery" />
+    </div>
+  )
 }

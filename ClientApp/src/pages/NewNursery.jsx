@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
+import { Header } from '../components/Header'
 
 export function NewNursery() {
   const [newNursery, setNewNursery] = useState({
@@ -60,12 +61,7 @@ export function NewNursery() {
 
   return (
     <>
-      <header>
-        <h2>
-          <Link to="/">BambooFinder.com</Link>
-        </h2>
-        <h4>Add Your Nursery</h4>
-      </header>
+      <Header pageName="Add Your Nursery" />
       <div className="addForm">
         <form onSubmit={handleFormSubmit}>
           {/* <div>Username</div>

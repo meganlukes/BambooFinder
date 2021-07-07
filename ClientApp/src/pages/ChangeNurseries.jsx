@@ -1,15 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Header } from '../components/Header'
 
 export function ChangeNurseries() {
   return (
     <div>
-      <header>
-        <h2>
-          <Link to="/">BambooFinder.com</Link>
-        </h2>
-        <h4>Edit/Delete Nursery</h4>
-      </header>
+      <Header pageName="Edit Your Nursery" />
       <div className="menuList">
         <button className="big">
           {' '}

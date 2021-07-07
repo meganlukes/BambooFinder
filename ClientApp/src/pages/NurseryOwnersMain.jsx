@@ -1,18 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Header } from '../components/Header'
 
 export function NurseryOwnersMain() {
   return (
     <div>
-      <header>
-        <h2>
-          <Link to="/">BambooFinder.com</Link>
-        </h2>
-        <h4>Nursery Owners</h4>
-        <h3>
-          Add Your Nursery to BambooFinder.com to Connect with New Customers
-        </h3>
-      </header>
+      <Header
+        pageName="Nursery Owners"
+        pageDescript="Add Your Nursery to BambooFinder.com to Connect with New Customers"
+      />
       <div className="menuList">
         <button className="big">
           {' '}

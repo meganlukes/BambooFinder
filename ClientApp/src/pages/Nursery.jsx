@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import { Header } from '../components/Header'
 
 export function Nursery() {
   const params = useParams()
@@ -45,12 +46,7 @@ export function Nursery() {
   console.log(nursery.inventorySellers)
   return (
     <>
-      <header>
-        <h2>
-          <Link to="/">BambooFinder.com</Link>
-        </h2>
-      </header>
-      <p className="name">{nursery.name}</p>
+      <Header pageName={nursery.name} />
       <ol>
         <table className="infotable">
           <tbody>

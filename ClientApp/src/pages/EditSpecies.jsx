@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, Link, useHistory } from 'react-router-dom'
 import { useDropzone } from 'react-dropzone'
 import { authHeader } from '../auth'
+import { Header } from '../components/Header'
 
 export function EditSpecies() {
   const params = useParams()
@@ -115,12 +116,13 @@ export function EditSpecies() {
 
   return (
     <>
-      <header>
+      {/* <header>
         <h2>
           <Link to="/">BambooFinder.com</Link>
         </h2>
         <h4>Edit Species</h4>
-      </header>
+      </header> */}
+      <Header pageName="Edit Species" />
       <div className="addForm">
         <form onSubmit={handleFormSubmit}>
           <div>Species Name</div>

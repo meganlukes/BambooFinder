@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Header } from '../components/Header'
 
 export function ListOfSpeciesToEdit() {
   const [species, setSpecies] = useState([])
@@ -24,6 +25,7 @@ export function ListOfSpeciesToEdit() {
         </h2>
         <h3>Select a Species to Edit</h3>
       </header>
+      <Header pageDescript="Select a Species to Edit" />
       <table>
         <tbody>
           {species.map((species) => (

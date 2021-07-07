@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Header } from '../components/Header'
 
 export function ListOfNurseriesToEdit() {
   const [nurseries, setNurseries] = useState([])
@@ -23,6 +24,7 @@ export function ListOfNurseriesToEdit() {
         </h2>
         <h3>Choose a Nursery to Edit</h3>
       </header>
+      <Header pageDescript="Choose a Nursery to Edit" />
       <table>
         <tbody>
           {nurseries.map((nursery) => (

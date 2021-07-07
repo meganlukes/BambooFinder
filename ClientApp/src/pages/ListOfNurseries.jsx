@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Header } from '../components/Header'
+
 export function ListOfNurseries() {
   const [filterText, setFilterText] = useState('')
   const [nurseries, setNurseries] = useState([])
@@ -21,12 +23,7 @@ export function ListOfNurseries() {
 
   return (
     <div>
-      <header>
-        <h2>
-          <Link to="/">BambooFinder.com</Link>
-        </h2>
-        <h4>Bamboo Nurseries</h4>
-      </header>
+      <Header pageName="Bamboo Nurseries" />
       <form>
         <input
           type="text"

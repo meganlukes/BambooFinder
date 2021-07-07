@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { authHeader } from '../auth'
+import { Header } from '../components/Header'
 
 export function DeleteNursery() {
   const [nurseries, setNurseries] = useState([])
@@ -50,12 +51,7 @@ export function DeleteNursery() {
 
   return (
     <>
-      <header>
-        <h2>
-          <Link to="/">BambooFinder.com</Link>
-        </h2>
-        <h4>Delete a Nursery</h4>
-      </header>
+      <Header pageName="Delete a Nursery" />
       <div className="addForm">
         <form onSubmit={handleFormSubmit}>
           <div>Select a Nursery to Delete</div>

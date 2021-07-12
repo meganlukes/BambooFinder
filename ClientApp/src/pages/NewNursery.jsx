@@ -2,6 +2,13 @@ import React, { useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { Header } from '../components/Header'
 
+function handleStringFieldChange(event, { setNewThing, newThing }) {
+  const value = event.target.value
+  const fieldName = event.target.name
+
+  setNewThing({ ...newThing, [fieldName]: value })
+}
+
 export function NewNursery() {
   const [newNursery, setNewNursery] = useState({
     Name: '',
@@ -21,10 +28,10 @@ export function NewNursery() {
   //   Password: '',
   // })
   const history = useHistory()
+
   function handleStringFieldChange(event) {
     const value = event.target.value
     const fieldName = event.target.name
-    // setNewUser({ ...newUser, [fieldName]: value })
 
     setNewNursery({ ...newNursery, [fieldName]: value })
   }
@@ -64,31 +71,6 @@ export function NewNursery() {
       <Header pageName="Add Your Nursery" />
       <div className="addForm">
         <form onSubmit={handleFormSubmit}>
-          {/* <div>Username</div>
-          <input
-            type="text"
-            className="inputLittleBox"
-            placeholder=""
-            name="Username"
-            value={newUser.Username}
-            onChange={handleStringFieldChange}
-          />
-          <div>Login Email Address</div>
-          <input
-            type="text"
-            placeholder="ex. name@business.com"
-            name="Email"
-            value={newUser.Email}
-            onChange={handleStringFieldChange}
-          />
-          <div>Password</div>
-          <input
-            type="text"
-            placeholder=""
-            name="Email"
-            value={newUser.Email}
-            onChange={handleStringFieldChange}
-          /> */}
           <div>Nursery Name</div>
           <input
             type="text"

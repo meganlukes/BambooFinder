@@ -5,10 +5,7 @@ import { Header } from '../components/Header'
 export function NurseryOwnersMain() {
   return (
     <div>
-      <Header
-        pageName="Nursery Owners"
-        pageDescript="Add Your Nursery to BambooFinder.com to Connect with New Customers"
-      />
+      <Header pageName="Nursery Owners" pageDescript="Welcome User" />
       <div className="menuList">
         <button className="big">
           {' '}
